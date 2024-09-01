@@ -1,0 +1,49 @@
+.choices
+  margin-bottom: 0
+
+  &.is-focused
+    box-shadow: 0 0 5px rgba(0,0,0,0.1)
+
+  &.is-open
+    &[data-type*=select-one]::after
+      transform: translateY(-50%) rotate(180deg)
+
+  &.is-disabled
+    .choices__item
+      color: #989898
+
+  &[data-type*=select-one]::after
+    right: 2rem
+    width: 2rem
+    height: 2rem
+    border: none
+    margin: 0 !important
+    transform: translateY(-50%)
+    background: url(/src/assets/images/sprite.svg#angle-down-view) no-repeat 50% 50%
+    background-size: 1.9rem 2rem
+    @include transition
+
+  &__inner
+    display: flex
+    align-items: center
+    border: none !important
+    border-radius: 8px !important
+    min-height: 5rem
+    padding: 1rem 2rem
+    background: #ffffff
+
+    .choices__list
+      .choices__item
+        padding: 0 !important
+
+  &__list
+    border-radius: 8px !important
+
+  .choices__item
+    padding: 1rem 2rem !important
+    @include font-params(1.4rem, 1.3, #000000)
+
+  &__list--dropdown
+    input + .choices__list
+      .choices__item--disabled
+        display: none !important

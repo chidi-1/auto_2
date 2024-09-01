@@ -1,0 +1,40 @@
+.header__top
+    .container
+        .justify
+            .header__location
+                svg(width=18 height=18)
+                    use(xlink:href='/src/assets/images/sprite.svg#icon-location')
+                span г. Москва, Варшавское шоссе&nbsp;4
+            a(href='').header__logo
+                img(src='/src/assets/images/logo.svg' alt='Логотип')
+            a(href='tel:').header__phone
+                svg(width=18 height=18)
+                    use(xlink:href='/src/assets/images/sprite.svg#icon-phone')
+                span +7 999 999-99-99
+
+            button.header__hamburger.js--toggle-menu
+                span
+
+.header__bottom
+    .container
+        nav.nav
+            ul.nav__list
+                li.nav__el
+                    a(href='').nav__link Главная
+                li.nav__el
+                    a(href='').nav__link Каталог
+                li.nav__el
+                    a(href='').nav__link Автокредит
+                li.nav__el
+                    a(href='').nav__link Trade-In
+                li.nav__el
+                    a(href='').nav__link Выкуп
+                li.nav__el
+                    a(href='').nav__link Акции
+                li.nav__el
+                    a(href='').nav__link Контакты
+
+        .header__contacts
+            span.header__location г. Москва, Варшавское шоссе&nbsp;4
+            a(href="tel: ").header__phone +7 999 999-99-99
+            button().button.button-blue Заказать звонок

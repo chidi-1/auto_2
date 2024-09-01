@@ -1,0 +1,194 @@
+.header
+  &.open
+    .header__bottom
+      transform: translateY(0)
+
+    .header__hamburger
+      span
+        opacity: 0
+
+      &:before,
+      &:after
+        width: 44px
+        top: 50%
+        right: 50%
+
+      &:before
+        transform: translate(50%,-50%) rotate(-45deg)
+      &:after
+        transform: translate(50%,-50%) rotate(45deg)
+
+  &-light
+    .header__bottom
+      background: transparent
+
+    .nav
+      color: $whiteColor
+
+  &-dark
+    .header__bottom
+      background: #f8f9fd
+
+    .nav
+      color: #000000
+
+  &__top
+    background: $whiteColor
+    padding: 1.5rem 0
+
+    @include mobile
+      position: relative
+      z-index: 10
+      height: 5.5rem
+
+  &__bottom
+    padding: 2.4rem 0
+    height: 6.5rem
+
+    @include mobile
+      position: fixed
+      z-index: 5
+      height: auto
+      inset: 0
+      top: 4.5rem
+      background: #ffffff !important
+      @include transition
+      transform: translateY(-110%)
+      overflow: auto
+
+    .header__contacts
+      display: none
+
+      @include mobile
+        display: block
+
+      .header__location
+        line-height: 1.1
+        font-weight: 600
+        margin-bottom: 1rem
+        color: #1D252D
+
+        @include mobile
+          display: block
+
+      .header__phone
+        font-size: 1.4rem
+        line-height: normal
+        font-weight: 500
+        margin-bottom: 2rem
+        color: #1D252D
+
+        @include mobile
+          display: block
+
+        &:hover
+          color: $blueColor
+
+      .button
+        width: 100%
+
+  .justify
+    @include flex-justify-horiz
+
+  &__location
+    @include flex-center-vert
+    gap: 1rem
+
+    @include mobile
+      display: none
+
+    span
+      @include font-params(1.4rem, auto, #838383)
+
+  &__logo
+    img
+      max-width: 19.5rem
+
+      @include mobile
+        max-width: 14rem
+
+  &__phone
+    @include flex-center-vert
+    gap: 1rem
+    text-decoration: none
+    font-weight: 500
+
+    @include mobile
+      display: none
+
+    &:hover
+      span
+        color: $blueColor
+
+    span
+      @include font-params(1.4rem, auto, #838383)
+      @include transition
+
+  &__hamburger
+    position: relative
+    background: transparent
+    padding: 0
+    display: none
+    width: 3.5rem
+    height: 3.5rem
+    cursor: pointer
+
+    @include mobile
+      display: flex
+
+    &:before,
+    &:after,
+    span
+      position: absolute
+      content: ""
+      right: 0
+      height: 4px
+      background: #1D252D
+      top: 50%
+      @include transition
+
+    &:before,
+    &:after
+      width: 30px
+    span
+      width: 35px
+
+    &:before
+      transform: translateY(-11px)
+    &:after
+      transform: translateY(7px)
+    span
+      transform: translateY(-2px)
+
+  .nav
+    display: block
+    text-align: center
+
+    &__list
+      display: flex
+      justify-content: center
+      gap: 4rem
+
+      @include mobile
+        flex-direction: column
+        gap: 2.5rem
+        padding: 3rem 0
+        justify-content: flex-start
+
+    &__el
+      display: inline-block
+
+      @include mobile
+        text-align: left
+
+    &__link
+      display: block
+      @include font-params(1.4rem, auto)
+      text-decoration: none
+
+      @include mobile
+        color: #1D252D !important
+        font-weight: 500
+
+      &:hover
+        color: $blueColor !important

@@ -1,0 +1,20 @@
+{
+  "Susuki": [
+    {"label":  "Выберите модель", "disabled": "true", "selected":  "true"},
+    { "value": "Susuki1", "label": "Susuki One"},
+    { "value": "Susuki2", "label": "Susuki Two"},
+    { "value": "Susuki3", "label": "Susuki Three"}
+  ],
+  "KIA": [
+    {"label":  "Выберите модель", "disabled": "true", "selected":  "true"},
+    { "value": "KIA1", "label": "KIA One"},
+    { "value": "KIA2", "label": "KIA Two"},
+    { "value": "KIA3", "label": "KIA Three"}
+  ],
+  "Omoda": [
+    {"label":  "Выберите модель", "disabled": "true", "selected":  "true"},
+    { "value": "Omoda1", "label": "Omoda One"},
+    { "value": "Omoda2", "label": "Omoda Two"},
+    { "value": "Omoda3", "label": "Omoda Three"}
+  ]
+}

@@ -1,0 +1,44 @@
+body
+  @include flex-justify-vert
+  min-height: 100vh
+  width: 100%
+
+  &.fixed
+    display: block
+    height: 100vh
+    overflow: hidden
+
+.page
+  width: 100%
+  overflow: hidden
+  position: relative
+  z-index: 15
+
+  .header
+    position: relative
+    z-index: 10
+
+  main
+    position: relative
+    z-index: 5
+
+  .header + main
+    margin-top: -6.5rem
+
+    @include mobile
+      margin-top: 0
+
+  .header.dark + main
+    padding-top: 6.5rem
+
+    @include mobile
+      padding-top: 0
+
+section
+  padding: 9.4rem 0
+
+  &.bg-blue
+    background: #e7effa
+
+.text-center
+  text-align: center

@@ -1,0 +1,175 @@
+.footer
+  background: #eaf1f9
+  padding: 10rem 0
+  position: relative
+  z-index: 5
+
+  @include tablet
+    padding: 5rem 0
+
+  h2
+    margin-bottom: 3.4rem
+
+  a
+    text-decoration: none
+    @include transition
+
+    &:hover
+      color: $blueColor
+
+  &__top
+    @include tablet
+      padding-top: 8rem
+      position: relative
+    @include mobile
+      padding-top: 7rem
+      display: flex
+      flex-direction: row-reverse
+      align-items: stretch
+      gap: 2rem
+      margin-bottom: 4rem
+
+  &__contacts
+    width: 100%
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    gap: 2rem
+    margin-bottom: 6rem
+
+    @include tablet
+      display: grid
+      grid-template-columns: repeat(4, 1fr)
+      gap: 2.5rem
+
+    @include mobile
+      width: calc(50% - 1rem)
+      display: flex
+      flex-direction: column
+      margin-bottom: 0
+      gap: 1.2rem
+
+  &__col
+    @include tablet
+      min-width: 11.5rem
+
+    &:nth-child(4)
+      @include tablet
+        grid-row-start: 1
+
+    span,
+    a
+      display: block
+      font-weight: 600
+      font-size: 1.6rem
+      line-height: 1.3
+      color: #1D252D
+
+      @include tablet
+        font-size: 1.4rem
+      @include mobile
+        font-size: 1.2rem
+
+      span
+        display: inline
+
+        @include tablet
+          display: block
+          margin-bottom: 0 !important
+
+      &:not(:last-child)
+        margin-bottom: 1rem
+
+      &.title
+        margin-bottom: 2rem
+        font-size: 2rem
+        color: #5F5F5F
+        font-weight: 400
+
+        @include mobile
+          margin-bottom: 1rem
+          font-size: 1.4rem
+
+  &__logo
+    @include tablet
+      position: absolute
+      left: 0
+      top: 0
+
+    img
+      width: 24rem
+
+      @include mobile
+        width: 16rem
+
+  &__menu
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    gap: 4.3rem
+    margin-bottom: 4rem
+
+    @include tablet
+      width: 100%
+
+    @include mobile
+      width: calc(50% - 1rem)
+      display: flex
+      flex-direction: column
+      margin-bottom: 0
+
+  .nav
+    @include tablet
+      width: 100%
+
+    @include mobile
+      height: 100%
+
+    &__list
+      display: flex
+      align-items: center
+      gap: 4rem
+      @include tablet
+        width: 100%
+        justify-content: space-between
+
+      @include mobile
+        height: 100%
+        flex-direction: column
+        align-items: flex-start
+
+    &__el
+      display: inline-block
+
+      @include mobile
+        text-align: left
+
+    &__link
+      display: block
+      @include font-params(1.4rem, auto, #1D252D)
+
+      @include mobile
+        font-size: 1.2rem
+
+      &:hover
+        color: $blueColor !important
+
+  &__info
+    display: flex
+    width: 100%
+    justify-content: space-between
+    align-items: flex-start
+    gap: 2rem
+    padding-top: 2rem
+    border-top: 1px solid #5F5F5F
+
+    @include mobile
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+
+    span,
+    a
+      color: #5F5F5F
+
+      @include tablet
+        font-size: 1.2rem

@@ -1,0 +1,35 @@
+extends ../views/layouts/layout-ui
+
+block content
+    .page-ui
+        .container.mb-20
+            h3 Шапка темный фон
+
+        .bg-black.mb-20
+            include ../views/components/header-light
+
+        .container.mb-20
+            h3 Шапка светлый фон
+
+        .mb-20
+            include ../views/components/header-dark
+
+        .container.mb-20
+            h3 Футер
+
+        .mb-20
+            include ../views/components/footer
+
+        .container
+            h3.mb-20 Компоненты формы
+
+            .mb-20
+                select(id='select1').js--select-style
+                    option(value='1') Значение 1
+                    option(value='2') Значение 2
+
+            .mb-20
+                select(disabled id='select2').js--select-style
+                    option(value='1') Значение 1
+                    option(value='2') Значение 2
+

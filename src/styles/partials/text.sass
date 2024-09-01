@@ -1,0 +1,72 @@
+h1,
+*.h1
+  display: block
+  @include font-params(5.2rem, 1.2, 500)
+  text-align: center
+
+  @include tablet
+    font-size: 4rem
+  @include mobile
+    font-size: 3.3rem
+
+h2
+  display: block
+  @include font-params(4rem, 1.5, 500)
+  text-align: center
+  text-transform: uppercase
+  margin-bottom: 5.5rem
+
+  @include tablet
+    font-size: 3.2rem
+  @include mobile
+    font-size: 2.3rem
+
+h3,
+*.h3
+  display: block
+  @include font-params(2rem, 1.1, 600)
+  text-align: center
+
+  @include tablet
+    font-size: 2rem
+  @include mobile
+    font-size: 1.6rem
+
+ul
+  list-style: disc
+  list-style-position: inside
+
+ol
+  list-style: decimal
+  list-style-position: inside
+
+a
+  text-decoration: underline
+
+.breadcrumbs
+  opacity: .5
+
+  ul
+    @include flex-center-vert
+    flex-wrap: wrap
+    gap: 2rem
+
+    li
+      @include flex-center-vert
+      gap: 2rem
+
+      &:not(:last-child)
+        &:after
+          content: ''
+          width: 14px
+          height: 14px
+
+      a,
+      span
+        font-size: 1.4rem
+
+      a
+        text-decoration: none
+
+        &:hover
+          text-decoration: underline

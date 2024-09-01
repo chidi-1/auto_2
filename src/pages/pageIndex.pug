@@ -1,0 +1,216 @@
+extends ../views/layouts/layout
+
+block vars
+    - var pageClass = 'page-index'
+    - var header = 'light'
+
+block content
+    .slider.main-slider
+        .swiper
+            .swiper-wrapper
+                .swiper-slide
+                    .slider__image
+                        picture
+                            source(type='img/webp' srcset='/src/assets/images/img--slider-1.webp 1x, /src/assets/images/img--slider-1@2x.webp 2x')
+                            source(type='img/jpg' srcset='/src/assets/images/img--slider-1.jpg 1x, /src/assets/images/img--slider-1@2x.jpg 2x')
+                            img(srcset='/src/assets/images/img--slider-1.jpg 1x, /src/assets/images/img--slider-1@2x.jpg 2x' alt='')
+
+                    .slider__content
+                        .slider__text
+                            span.h3 Новый
+                            span.h1 Changan UNI-K
+
+                        a(href='').button.button-white Перейти в&nbsp;каталог
+
+                .swiper-slide
+                    .slider__image
+                        picture
+                            source(type='img/webp' srcset='/src/assets/images/img--slider-2.webp 1x, /src/assets/images/img--slider-2@2x.webp 2x')
+                            source(type='img/jpg' srcset='/src/assets/images/img--slider-2.jpg 1x, /src/assets/images/img--slider-2@2x.jpg 2x')
+                            img(srcset='/src/assets/images/img--slider-2.jpg 1x, /src/assets/images/img--slider-2@2x.jpg 2x' alt='')
+
+                    .slider__content
+                        .slider__text
+                            span.h3 Подарок
+                            span.h1 Зимние шины
+
+                        a(href='').button.button-white Получить предложение
+
+                .swiper-slide
+                    .slider__image
+                        picture
+                            source(type='img/webp' srcset='/src/assets/images/img--slider-3.webp 1x, /src/assets/images/img--slider-3@2x.webp 2x')
+                            source(type='img/jpg' srcset='/src/assets/images/img--slider-3.jpg 1x, /src/assets/images/img--slider-3@2x.jpg 2x')
+                            img(srcset='/src/assets/images/img--slider-3.jpg 1x, /src/assets/images/img--slider-3@2x.jpg 2x' alt='')
+
+                    .slider__content
+                        .slider__text
+                            span.h3 Подарок
+                            span.h1 Каско и&nbsp;осаго
+
+                        a(href='').button.button-white Получить предложение
+
+                .swiper-slide
+                    .slider__image
+                        picture
+                            source(type='img/webp' srcset='/src/assets/images/img--slider-4.webp 1x, /src/assets/images/img--slider-4@2x.webp 2x')
+                            source(type='img/jpg' srcset='/src/assets/images/img--slider-4.jpg 1x, /src/assets/images/img--slider-4@2x.jpg 2x')
+                            img(srcset='/src/assets/images/img--slider-4.jpg 1x, /src/assets/images/img--slider-4@2x.jpg 2x' alt='')
+
+                    .slider__content
+                        .slider__text
+                            span.h3 Скидка по&nbsp;Trade-In
+                            span.h1 до&nbsp;300&nbsp;000&nbsp;₽
+
+                        a(href='').button.button-white Получить предложение
+
+                .swiper-slide
+                    .slider__image
+                        picture
+                            source(type='img/webp' srcset='/src/assets/images/img--slider-5.webp 1x, /src/assets/images/img--slider-5@2x.webp 2x')
+                            source(type='img/jpg' srcset='/src/assets/images/img--slider-5.jpg 1x, /src/assets/images/img--slider-5@2x.jpg 2x')
+                            img(srcset='/src/assets/images/img--slider-5.jpg 1x, /src/assets/images/img--slider-5@2x.jpg 2x' alt='')
+
+                    .slider__content
+                        .slider__text
+                            span.h3 Подарок
+                            span.h1 Автосигнализация
+
+                        a(href='').button.button-white Получить предложение
+
+            .swiper-pagination
+            .swiper-button-prev
+            .swiper-button-next
+
+        div(data-url="/src/js/responseExamples/indexFilterResponse.json").filter
+            .grid-5
+                select(id='brand').js--select-style.js--brand.js--get-variants
+                    option(selected disabled) Выберите марку
+                    option(value='Susuki') Susuki
+                    option(value='KIA') KIA
+                    option(value='Omoda') Omoda
+
+                select(disabled id='model').js--select-style.js--model.js--get-variants
+                    option(selected disabled) Выберите модель
+
+                input(placeholder='Цена от' name='' id='priceMin' data-lastVal='0').input.js--input-number.js--get-variants
+                input(placeholder='Цена до' name='' id='priceMax' data-lastVal='0').input.js--input-number.js--get-variants
+
+                a(href='/catalog').button.button-blue Показать 276 авто
+
+    section.brand
+        .container
+            h2  Поиск по&nbsp;марке автомобиля
+
+            .brands
+                ul.brands__logo
+                    li
+                        a(href="")
+                            img(src='/src/assets/images/logos/logo--audi.png' alt='audi')
+                    li
+                        a(href="")
+                            img(src='/src/assets/images/logos/logo--jaguar.png' alt='jaguar')
+                    li
+                        a(href="")
+                            img(src='/src/assets/images/logos/logo--bmw.png' alt='bmw')
+                    li
+                        a(href="")
+                            img(src='/src/assets/images/logos/logo--jeep.png' alt='jeep')
+                    li
+                        a(href="")
+                            img(src='/src/assets/images/logos/logo--chrysler.png' alt='chrysler')
+                    li
+                        a(href="")
+                            img(src='/src/assets/images/logos/logo--kia.png' alt='kia')
+                    li
+                        a(href="")
+                            img(src='/src/assets/images/logos/logo--ford.png' alt='ford')
+                    li
+                        a(href="")
+                            img(src='/src/assets/images/logos/logo--landrover.png' alt='landrover')
+                    li
+                        a(href="")
+                            img(src='/src/assets/images/logos/logo--hyundai.png' alt='hyundai')
+                    li
+                        a(href="")
+                            img(src='/src/assets/images/logos/logo--lexus.png' alt='lexus')
+
+                ul.brands__text.list-contains-hidden
+                    li
+                        a(href='') Susuki
+                    li
+                        a(href='') Pegeout
+                    li
+                        a(href='') Ford
+                    li
+                        a(href='') Mazda
+                    li
+                        a(href='') Haval
+                    li
+                        a(href='') Renault
+                    li
+                        a(href='') KIA
+                    li
+                        a(href='') Honda
+                    li
+                        a(href='') Volvo
+                    li
+                        a(href='') Jaecoo
+                    li
+                        a(href='') Geely
+                    li
+                        a(href='') Citroen
+                    li
+                        a(href='') Omoda
+                    li
+                        a(href='') Haval
+                    li
+                        a(href='') Audi
+                    li
+                        a(href='') Volkswagen
+                    li
+                        a(href='') Land Rover
+                    li
+                        a(href='') Chery
+                    li.hidden-el
+                        a(href='') Susuki
+                    li.hidden-el
+                        a(href='') Pegeout
+                    li.hidden-el
+                        a(href='') Ford
+                    li.hidden-el
+                        a(href='') Mazda
+                    li.hidden-el
+                        a(href='') Haval
+                    li.hidden-el
+                        a(href='') Renault
+
+            .text-center
+                button(data-hide='Скрыть' data-show='Показать все').button.button-blue-border.js--toggle-hidden Показать все
+
+    section.new.bg-blue
+        .container
+            h2 Новые поступления
+
+            include ../views/components/items
+
+    section.promo
+        .container
+            ul.promo__caption
+                li
+                    a(href='') Автокредит
+                li
+                    a(href='') Trade-In
+                li
+                    span Специальное предложение
+
+            .promo__content
+                picture
+                    source(type='img/webp' srcset='/src/assets/images/img--promo-1.webp 1x, /src/assets/images/img--promo-1@2x.webp 2x')
+                    source(type='img/jpg' srcset='/src/assets/images/img--promo-1.jpg 1x, /src/assets/images/img--promo-1@2x.jpg 2x')
+                    img(srcset='/src/assets/images/img--promo-1.jpg 1x, /src/assets/images/img--promo-1@2x.jpg 2x' alt='')
+
+                .promo__text
+                    h2
+                    span
+                    a(href='').button.button-blue Узнать подробнее

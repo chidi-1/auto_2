@@ -1,0 +1,128 @@
+.items
+  .swiper
+    padding-bottom: 9rem
+    position: relative
+
+  .swiper-wrapper
+    align-items: stretch
+
+    .swiper-slide
+      height: auto
+
+  .swiper-button-prev,
+  .swiper-button-next
+    position: absolute
+    width: 5rem
+    height: 5rem
+    border-radius: 8px
+    @include transition
+    bottom: 0
+    background: rgba(25, 128, 231, .5)
+    top: auto
+
+    @include tablet
+      width: 4rem
+      height: 4rem
+
+    &:after
+      position: absolute
+      content: ""
+      width: 30px
+      height: 30px
+      background: url(/src/assets/images/sprite.svg#angle-down-white-view) no-repeat 50% 50%
+      background-size: 3rem 3rem
+      top: 50%
+      left: 50%
+
+      @include tablet
+        width: 25px
+        height: 25px
+
+  .swiper-button-prev
+    left: 50%
+    transform: translateX(-6rem)
+
+    &:after
+      transform: translate(-50%,-50%) rotate(90deg)
+
+  .swiper-button-next
+    right: 50%
+    transform: translateX(6rem)
+
+    @include tablet
+      transform: none
+
+    &:after
+      transform: translate(-50%,-50%) rotate(-90deg)
+
+.item
+  height: 100%
+  padding-bottom: 7rem
+  background: $whiteColor
+  border-radius: 8px
+  position: relative
+
+  &__img
+    height: 18.2rem
+    border-radius: 8px
+    overflow: hidden
+
+    img
+      min-width: 100%
+      min-height: 100%
+      object-fit: cover
+      object-position: center
+
+  &__discount
+    position: absolute
+    z-index: 3
+    top: 2rem
+    left: 2rem
+    padding: 6px 12px
+    background: $blueColor
+    color: $whiteColor
+    @include font-params(1.4rem, normal, 500)
+    border-radius: 4.5rem
+
+  &__content
+    padding: 2.2rem
+
+  &__name
+    display: block
+    color: #1D252D
+    @include font-params(1.6rem, 1.2, 700)
+    margin-bottom: 1.5rem
+
+  &__price
+    margin-bottom: 2rem
+    display: flex
+    align-items: flex-start
+    gap: 1rem
+
+  &__price-new
+    display: inline-block
+    color: #1D252D
+    @include font-params(1.6rem, 1.2, 700)
+
+  &__price-old
+    display: inline-block
+    color: #838383
+    @include font-params(1.4rem, normal, 500)
+
+  &__type
+    display: block
+    color: #838383
+    @include font-params(1.6rem, normal, 500)
+    margin-bottom: .5rem
+
+  &__available
+    display: block
+    color: #838383
+    @include font-params(1.6rem, normal, 500)
+
+  .button
+    position: absolute
+    left: 2rem
+    right: 2rem
+    bottom: 2rem
+    font-size: 1.6rem
