@@ -53,7 +53,7 @@
                         span.item__type Седан
                         span.item__available В&nbsp;наличии: 2&nbsp;автомобиля
                         a(href='').button.button-blue Купить в&nbsp;кредит
-            .swiper-slide
+            .swiper-slide.hidden-el
                 .item
                     .item__img
                         img(src='/src/assets/images/img--item.jpg' alt='')
@@ -69,3 +69,6 @@
 
         .swiper-button-prev
         .swiper-button-next
+
+    .text-center
+        button(data-hide='Скрыть' data-show='Показать все').button.button-blue-border.js--toggle-hidden Показать все

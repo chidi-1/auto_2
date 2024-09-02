@@ -82,7 +82,7 @@ block content
             .swiper-button-prev
             .swiper-button-next
 
-        div(data-url="/src/js/responseExamples/indexFilterResponse.json").filter
+        div(data-url="http://bevolgayan.temp.swtest.ru/promo/auto_2/assets/responseExamples/indexFilterResponse.json").filter
             .grid-5
                 select(id='brand').js--select-style.js--brand.js--get-variants
                     option(selected disabled) Выберите марку
@@ -194,23 +194,88 @@ block content
 
             include ../views/components/items
 
-    section.promo
+    section.proposal
         .container
-            ul.promo__caption
+            ul.proposal__caption
                 li
                     a(href='') Автокредит
                 li
                     a(href='') Trade-In
-                li
+                li.active
                     span Специальное предложение
 
-            .promo__content
-                picture
-                    source(type='img/webp' srcset='/src/assets/images/img--promo-1.webp 1x, /src/assets/images/img--promo-1@2x.webp 2x')
-                    source(type='img/jpg' srcset='/src/assets/images/img--promo-1.jpg 1x, /src/assets/images/img--promo-1@2x.jpg 2x')
-                    img(srcset='/src/assets/images/img--promo-1.jpg 1x, /src/assets/images/img--promo-1@2x.jpg 2x' alt='')
+            .proposal__content
+                picture.proposal__bg
+                    source(type='img/webp' srcset='/src/assets/images/img--proposal-1.webp 1x, /src/assets/images/img--proposal-1@2x.webp 2x')
+                    source(type='img/jpg' srcset='/src/assets/images/img--proposal-1.jpg 1x, /src/assets/images/img--proposal-1@2x.jpg 2x')
+                    img(srcset='/src/assets/images/img--proposal-1.jpg 1x, /src/assets/images/img--proposal-1@2x.jpg 2x' alt='')
 
-                .promo__text
-                    h2
-                    span
-                    a(href='').button.button-blue Узнать подробнее
+                .proposal__text
+                    h2 Комплект зимних Шин в&nbsp;подарок!
+                    span При покупке автомобиля в&nbsp;нашем автосалоне
+                    a(href='').button.button-blue Получить предложение
+
+    section.new.bg-blue
+        .container
+            h2 Спецпедложения
+
+            include ../views/components/items
+
+    section.promo
+        .container
+            h2 Акции
+
+            ul.promo__list
+                li.promo__el
+                    .promo__img
+                        picture
+                            source(type='img/webp' srcset='/src/assets/images/img--promo-1.webp 1x, /src/assets/images/img--promo-1@2x.webp 2x')
+                            source(type='img/jpg' srcset='/src/assets/images/img--promo-1.jpg 1x, /src/assets/images/img--promo-1@2x.jpg 2x')
+                            img(srcset='/src/assets/images/img--promo-1.jpg 1x, /src/assets/images/img--promo-1@2x.jpg 2x' alt='')
+
+                    .promo__content
+                        h3 Низкий процент по&nbsp;кредиту с&nbsp;банками партнёрами
+                        a(href='') Получить предложение
+
+                li.promo__el
+                    .promo__img
+                        picture
+                            source(type='img/webp' srcset='/src/assets/images/img--promo-2.webp 1x, /src/assets/images/img--promo-2@2x.webp 2x')
+                            source(type='img/jpg' srcset='/src/assets/images/img--promo-2.jpg 1x, /src/assets/images/img--promo-2@2x.jpg 2x')
+                            img(srcset='/src/assets/images/img--promo-2.jpg 1x, /src/assets/images/img--promo-2@2x.jpg 2x' alt='')
+
+                    .promo__content
+                        h3 КАСКО и&nbsp;ОСАГО в&nbsp;подарок при покупке авто в&nbsp;кредит
+                        a(href='') Получить предложение
+
+                li.promo__el
+                    .promo__img
+                        picture
+                            source(type='img/webp' srcset='/src/assets/images/img--promo-3.webp 1x, /src/assets/images/img--promo-3@2x.webp 2x')
+                            source(type='img/jpg' srcset='/src/assets/images/img--promo-3.jpg 1x, /src/assets/images/img--promo-3@2x.jpg 2x')
+                            img(srcset='/src/assets/images/img--promo-3.jpg 1x, /src/assets/images/img--promo-3@2x.jpg 2x' alt='')
+
+                    .promo__content
+                        h3 Получите выгоду по&nbsp;Trade-In до&nbsp;300&nbsp;000&nbsp;₽
+                        a(href='') Получить предложение
+
+    section.question
+        .container
+            .form
+                h2 Остались вопросы?
+                p.form__description Заполните форму и&nbsp;отправьте заявку. Мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время и&nbsp;ответим на&nbsp;все интересующие вас вопросы
+
+                form(action='' method='post').main-form
+                    .grid-3
+                        input(type='text' name='name' placeholder='Имя').input.required
+                        input(type='text' name='phone' placeholder='+7 999 999-99-99').input.required.js--input-phone
+                        button(type='submit' disabled).button.button-blue.js--form-send Отправить заявку
+
+                    label.checkbox
+                        input(type='checkbox').js--check-policy
+                        .checkbox__icon
+                        span.checkbox__text Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь
+                            =" "
+                            a(href='') с&nbsp;политикой обработки персональных данных
+
+

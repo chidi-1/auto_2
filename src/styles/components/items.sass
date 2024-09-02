@@ -3,11 +3,30 @@
     padding-bottom: 9rem
     position: relative
 
+    @include tablet
+      padding-bottom: 0
+      overflow: visible
+
+    @include mobile
+      margin-bottom: 3rem
+
   .swiper-wrapper
     align-items: stretch
 
+    @include mobile
+      flex-direction: column
+      gap: 3rem
+
     .swiper-slide
       height: auto
+
+      &.hidden-el
+        @include mobile
+          display: none
+
+        &.visible
+          @include mobile
+            display: block
 
   .swiper-button-prev,
   .swiper-button-next
@@ -21,8 +40,10 @@
     top: auto
 
     @include tablet
-      width: 4rem
-      height: 4rem
+      top: -7rem
+
+    @include mobile
+      display: none
 
     &:after
       position: absolute
@@ -42,6 +63,11 @@
     left: 50%
     transform: translateX(-6rem)
 
+    @include tablet
+      transform: none
+      right: 7rem
+      left: auto
+
     &:after
       transform: translate(-50%,-50%) rotate(90deg)
 
@@ -50,10 +76,21 @@
     transform: translateX(6rem)
 
     @include tablet
+      right: 0
       transform: none
 
     &:after
       transform: translate(-50%,-50%) rotate(-90deg)
+
+  .text-center
+    display: none
+
+    @include mobile
+      display: block
+
+    .button
+      display: flex
+      width: 100%
 
 .item
   height: 100%
@@ -96,6 +133,7 @@
   &__price
     margin-bottom: 2rem
     display: flex
+    flex-wrap: wrap
     align-items: flex-start
     gap: 1rem
 

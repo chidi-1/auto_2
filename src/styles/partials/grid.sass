@@ -8,3 +8,12 @@
   display: grid
   gap: 11px
   grid-template-columns: repeat(5, calc((100% + 11px) / 5 - 11px))
+
+.grid-3
+  display: grid
+  gap: 2rem
+  grid-template-columns: repeat(5, calc((100% + 2rem) / 3 - 2rem))
+
+  @include mobile
+    display: flex
+    flex-direction: column
