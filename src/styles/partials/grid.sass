@@ -4,15 +4,48 @@
   padding: 0 20px
   margin: 0 auto
 
+  @include tablet
+    padding: 0 40px
+  @include mobile
+    padding: 0 10px
+
 .grid-5
   display: grid
   gap: 11px
   grid-template-columns: repeat(5, calc((100% + 11px) / 5 - 11px))
 
+  @include tablet
+    grid-template-columns: repeat(2, calc(50% - 1rem))
+
+  @include mobile
+    display: flex
+    flex-direction: column
+
 .grid-3
   display: grid
   gap: 2rem
-  grid-template-columns: repeat(5, calc((100% + 2rem) / 3 - 2rem))
+  grid-template-columns: repeat(3, calc((100% + 2rem) / 3 - 2rem))
+
+  @include mobile
+    display: flex
+    flex-direction: column
+
+.grid-4
+  display: grid
+  gap: 2rem
+  grid-template-columns: repeat(4, calc((100% + 2rem) / 4 - 2rem))
+
+  @include tablet
+    grid-template-columns: repeat(2, calc(50% - 1rem))
+
+  @include mobile
+    display: flex
+    flex-direction: column
+
+.grid-2
+  display: grid
+  gap: 2rem
+  grid-template-columns: repeat(2, calc(50% - 1rem))
 
   @include mobile
     display: flex

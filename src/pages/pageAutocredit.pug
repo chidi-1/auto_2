@@ -1,0 +1,140 @@
+extends ../views/layouts/layout
+
+block vars
+    - var pageClass = 'page-autocredit'
+    - var header = 'light'
+
+block content
+    section(style='background: url(/src/assets/images/bg--autocredit.jpg) no-repeat 50% 50%').page-header.dark
+        .container
+            h1 Автокредит
+            h3 Оставьте заяву и&nbsp;получите скидку до&nbsp;300&nbsp;000&nbsp;₽
+            .text-center
+                button(data-fancybox data-src="#getOffer").button.button-white Оставить заявку
+
+    section.calculate.bg-blue
+        .container
+            ul.breadcrumbs
+                li
+                    a(href='') Главная
+                li
+                    span Автокредит
+
+            include ../views/components/calculate
+
+    section.partners
+        .container
+            h2 банки партнёры
+
+            ul.partners__list.desktop
+                li.partners__el
+                    img(src='/src/assets/images/logos/logo--bank-1.png' alt='Сбер' )
+                li.partners__el
+                    img(src='/src/assets/images/logos/logo--bank-2.png' alt='Альфа' )
+                li.partners__el
+                    img(src='/src/assets/images/logos/logo--bank-3.png' alt='Т' )
+                li.partners__el
+                    img(src='/src/assets/images/logos/logo--bank-4.png' alt='Восточный банк' )
+                li.partners__el
+                    img(src='/src/assets/images/logos/logo--bank-5.png' alt='ОТП' )
+                li.partners__el
+                    img(src='/src/assets/images/logos/logo--bank-6.png' alt='Россельхоз' )
+                li.partners__el
+                    img(src='/src/assets/images/logos/logo--bank-7.png' alt='Газпромбанк Автолизинг' )
+                li.partners__el
+                    img(src='/src/assets/images/logos/logo--bank-8.png' alt='АТБ' )
+                li.partners__el
+                    img(src='/src/assets/images/logos/logo--bank-9.png' alt='ДрайвКлик' )
+                li.partners__el.hidden-el
+                    img(src='/src/assets/images/logos/logo--bank-10.png' alt='ВТБ' )
+                li.partners__el.hidden-el
+                    img(src='/src/assets/images/logos/logo--bank-11.png' alt='Газпромбанк' )
+                li.partners__el.hidden-el
+                    img(src='/src/assets/images/logos/logo--bank-12.png' alt='Зенит' )
+                li.partners__el.hidden-el
+                    img(src='/src/assets/images/logos/logo--bank-13.png' alt='Ингосстрах' )
+                li.partners__el.hidden-el
+                    img(src='/src/assets/images/logos/logo--bank-14.png' alt='Открытие' )
+                li.partners__el.hidden-el
+                    img(src='/src/assets/images/logos/logo--bank-15.png' alt='Экспобанк' )
+                li.partners__el.hidden-el
+                    img(src='/src/assets/images/logos/logo--bank-16.png' alt='ПромСоцБанк' )
+                li.partners__el.hidden-el
+                    img(src='/src/assets/images/logos/logo--bank-17.png' alt='Абсолют' )
+                li.partners__el.hidden-el
+                    img(src='/src/assets/images/logos/logo--bank-18.png' alt='ПочтаБанк' )
+
+            ul.partners__list.mobile
+                li.partners__el
+                    img(src='/src/assets/images/logos/logo--bank-1-s.svg' alt='Сбер' )
+                li.partners__el
+                    img(src='/src/assets/images/logos/logo--bank-2-s.svg' alt='Альфа' )
+                li.partners__el
+                    img(src='/src/assets/images/logos/logo--bank-3-s.svg' alt='Газпром' )
+                li.partners__el
+                    img(src='/src/assets/images/logos/logo--bank-4-s.svg' alt='Т' )
+                li.partners__el
+                    img(src='/src/assets/images/logos/logo--bank-5-s.svg' alt='ВТБ' )
+                li.partners__el
+                    img(src='/src/assets/images/logos/logo--bank-6-s.svg' alt='Райфайзен' )
+                li.partners__el
+                    img(src='/src/assets/images/logos/logo--bank-7-s.svg' alt='Открытие' )
+                li.partners__el
+                    img(src='/src/assets/images/logos/logo--bank-8-s.svg' alt='Газпром Автолизинг' )
+                li.partners__el.hidden-el
+                    img(src='/src/assets/images/logos/logo--bank-1-s.svg' alt='Сбер' )
+                li.partners__el.hidden-el
+                    img(src='/src/assets/images/logos/logo--bank-2-s.svg' alt='Альфа' )
+                li.partners__el.hidden-el
+                    img(src='/src/assets/images/logos/logo--bank-3-s.svg' alt='Газпром' )
+                li.partners__el.hidden-el
+                    img(src='/src/assets/images/logos/logo--bank-4-s.svg' alt='Т' )
+                li.partners__el.hidden-el
+                    img(src='/src/assets/images/logos/logo--bank-5-s.svg' alt='ВТБ' )
+                li.partners__el.hidden-el
+                    img(src='/src/assets/images/logos/logo--bank-6-s.svg' alt='Райфайзен' )
+                li.partners__el.hidden-el
+                    img(src='/src/assets/images/logos/logo--bank-7-s.svg' alt='Открытие' )
+                li.partners__el.hidden-el
+                    img(src='/src/assets/images/logos/logo--bank-8-s.svg' alt='Газпром Автолизинг' )
+
+            .text-center
+                button(data-hide='Скрыть' data-show='Показать все').button.button-blue-border.js--toggle-hidden Показать все
+
+    section.benefits.bg-blue
+        .container
+            h2  Преимущества Автокредита
+
+            ul.benefits__list.grid-3
+                li.benefits__el
+                    .benefits__icon
+                        img(src='/src/assets/images/icon-benefit-1.svg' alt='Иконка')
+
+                    .benefits__text
+                        h3 Первый взнос от&nbsp;0%
+                        p Возможно оформление кредита без первоначального взноса.
+
+                li.benefits__el
+                    .benefits__icon
+                        img(src='/src/assets/images/icon-benefit-2.svg' alt='Иконка')
+
+                    .benefits__text
+                        h3 Гарантия 2&nbsp;года
+                        p Даём техническую гарантию на&nbsp;все автомобили автосалона на&nbsp;срок до&nbsp;2&nbsp;лет.
+
+                li.benefits__el
+                    .benefits__icon
+                        img(src='/src/assets/images/icon-benefit-3.svg' alt='Иконка')
+
+                    .benefits__text
+                        h3 По&nbsp;двум документам
+                        p Для оформления нужен паспорт&nbsp;РФ и&nbsp;водительское удостоверение.
+
+                li.text
+                    p Мы&nbsp;возьмём на&nbsp;себя подбор оптимальной кредитной программы и&nbsp;оформление сопутствующих документов. Вам остаётся лишь выбрать подходящий автомобиль и&nbsp;заполнить кредитную заявку для предварительного одобрения.
+
+            .benefits__request
+                p Мы&nbsp;возьмём на&nbsp;себя подбор оптимальной кредитной программы и&nbsp;оформление сопутствующих документов. Вам остаётся лишь выбрать подходящий автомобиль и&nbsp;заполнить кредитную заявку для предварительного одобрения.
+                button.button.button-blue Отправить заявку
+
+    include ../views/components/question

@@ -1,6 +1,7 @@
 extends ../views/layouts/layout-ui
 
 block content
+
     section.page-ui
         .container.mb-20
             h3 Шапка темный фон
@@ -37,3 +38,30 @@ block content
             h3.mb-20 Слайдер с товарами
 
             include ../views/components/items
+
+            h3.mb-20 Попапы с формами
+
+            button(data-fancybox data-src="#getOffer").button.button-blue.mb-20 Получить предложение
+            button(data-fancybox data-src="#requestAuto").button.button-blue.mb-20 Заявка на автокредит
+            button(data-fancybox data-src="#bookCar").button.button-blue.mb-20 Забронировать автомобиль
+            button(data-fancybox data-src="#requestTradeIn").button.button-blue.mb-20 Заявка на&nbsp;Trade-In
+
+            .mb-20
+                include ../views/components/proposal1
+            .mb-20
+                include ../views/components/proposal2
+            .mb-20
+                include ../views/components/proposal3
+
+            .mb-20
+                include ../views/components/searchBrand
+
+            .mb-20
+                include ../views/components/question
+
+
+    .hidden
+        include ../views/form/getOffer
+        include ../views/form/requestAuto
+        include ../views/form/bookCar
+        include ../views/form/requestTradeIn

@@ -1,0 +1,20 @@
+section.proposal
+    .container
+        ul.proposal__caption
+            li.active
+                span Автокредит
+            li
+                a(href='') Trade-In
+            li
+                a(href='') Специальное предложение
+
+        .proposal__content
+            picture.proposal__bg
+                source(type='img/webp' srcset='/src/assets/images/img--proposal-1.webp 1x, /src/assets/images/img--proposal-1@2x.webp 2x')
+                source(type='img/jpg' srcset='/src/assets/images/img--proposal-1.jpg 1x, /src/assets/images/img--proposal-1@2x.jpg 2x')
+                img(srcset='/src/assets/images/img--proposal-1.jpg 1x, /src/assets/images/img--proposal-1@2x.jpg 2x' alt='')
+
+            .proposal__text
+                h2 Скидка до&nbsp;300&nbsp;000&nbsp;₽ на&nbsp;авто в&nbsp;кредит
+                span Условия акции уточняйте по&nbsp;телефону
+                button(data-fancybox data-src="#requestAuto").button.button-blue Получить предложение

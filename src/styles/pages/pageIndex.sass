@@ -1,3 +1,9 @@
+@keyframes slideInLieft
+  from
+    transform: translateX(-100%)
+  to
+    transform: translateX(0)
+
 .page-index
   background: $whiteColor
 
@@ -21,25 +27,6 @@
       @include mobile
         height: 64.5rem !important
 
-      .slider__image picture source,
-      .slider__image picture img
-        display: block
-        min-height: 100%
-        min-width: 100%
-        height: auto !important
-        width: auto !important
-        max-width: 200% !important
-        position: absolute
-        left: 50%
-        top: 50%
-        transform: translate(-50%,-50%)
-
-      .slider__image picture
-        position: relative
-        z-index: 1
-        width: 100%
-        height: 100%
-
       .slider__image
         position: relative
         display: flex
@@ -53,6 +40,12 @@
           height: 69rem !important
         @include mobile
           height: 64.5rem !important
+
+        img
+          min-width: 100%
+          min-height: 100%
+          object-fit: cover
+          max-width: max-content
 
         &:before
           position: absolute
@@ -89,7 +82,7 @@
           width: calc(100% - 68px)
 
         @include mobile
-          bottom: 38rem
+          bottom: 42rem
           width: calc(100% - 32px)
           flex-direction: column
           gap: 5px
@@ -137,6 +130,7 @@
         position: relative
         cursor: pointer
         background: transparent
+        overflow: hidden
 
         @include tablet
           height: 6rem
@@ -146,6 +140,9 @@
 
         &.swiper-pagination-bullet-active
           &:after
+            top: 50%
+            left: 0
+            animation: 3s slideInLieft
             opacity: 1
 
         &:after
@@ -154,7 +151,7 @@
           width: 100%
           top: 50%
           height: 2px
-          transform: translateY(-50%)
+          margin-top: -1px
           border-radius: 4px
           background: $whiteColor
           opacity: .4
@@ -258,81 +255,6 @@
         grid-column-start: 1
         grid-column-end: 3
 
-  .brand
-    h2
-      margin-bottom: 5.5rem
-
-    .brands
-      margin-bottom: 6rem
-
-      &__logo
-        display: flex
-        align-items: center
-        justify-content: space-between
-        margin-bottom: 4rem
-        gap: 4rem
-
-        @include tablet
-          justify-content: center
-          flex-wrap: wrap
-          max-width: 48rem
-          margin: 0 auto 4rem
-
-        @include mobile
-          gap: 1.5rem
-
-        li
-          display: inline-block
-
-          a
-            display: block
-            width: 7rem
-            height: 7rem
-
-            @include tablet
-              width: 6rem
-              height: 6rem
-
-            @include mobile
-              width: 4rem
-              height: 4rem
-
-            img
-              max-width: 100%
-              max-height: 100%
-
-      &__text
-        display: flex
-        flex-wrap: wrap
-        align-items: flex-start
-        justify-content: space-between
-        gap: 2.3rem
-
-        li
-          display: inline-block
-          width: calc((100%/6) - 4rem)
-
-          @include mobile
-            width: auto
-
-          &.hidden-el
-            display: none
-
-            &.visible
-              display: inline-block
-
-          a
-            font-weight: 500
-            text-decoration: none
-            color: $blueColor
-
-            &:hover
-              text-decoration: underline
-
-    .button
-      display: inline-flex
-      padding: 1rem 4rem
-
   .new
     h2
       @include tablet
@@ -343,119 +265,6 @@
       @include mobile
         text-align: center
         padding-right: 0
-
-  .proposal
-    &__caption
-      padding: 0 4rem
-      display: grid
-      align-items: flex-end
-      grid-template-columns: repeat(3, calc((100% + 2rem) / 3 - 2rem))
-      gap: 2rem
-      margin-bottom: 6rem
-
-      @include mobile
-        grid-template-columns: repeat(3, auto)
-      @include mobile
-        padding: 0
-
-      li
-        display: inline-flex
-        justify-content: center
-        text-align: center
-        border-bottom: 1px solid #838383
-        padding: 1.2rem 0
-
-        &.active
-          border-bottom: 1px solid $blueColor
-
-        span,
-        a
-          @include font-params(2rem, 1.2, 500)
-
-          @include tablet
-            font-size: 1.4rem
-            font-weight: 600
-
-          @include mobile
-            font-size: 1.2rem
-
-        span
-          color: $blueColor
-
-        a
-          color: #838383
-          text-decoration: none
-          @include transition
-
-          &:hover
-            color: $blueColor
-
-    &__content
-      border-radius: 8px
-      overflow: hidden
-      box-shadow: 0 5px 30px rgba(0,0,0,0.08)
-      padding: 7rem
-      position: relative
-
-      @include tablet
-        padding: 6rem 3rem
-
-      @include mobile
-        padding: 21rem 0 0 0
-        box-shadow: none
-
-    &__bg
-      position: absolute
-      top: 0
-      right: 0
-      width: 51%
-
-      @include tablet
-        right: -22%
-        width: 56%
-
-      @include mobile
-        height: 20rem
-        right: 0
-        width: auto
-
-      img
-        width: 100%
-
-        @include mobile
-          width: auto
-          height: 100%
-
-    &__text
-      max-width: calc(51% - 7rem)
-
-      @include tablet
-        max-width: calc(61% - 3rem)
-      @include mobile
-        max-width: 100%
-
-      h2
-        text-align: left
-        margin-bottom: 2rem
-        line-height: 1.2
-
-        @include mobile
-          margin-bottom: 1rem
-
-      span
-        display: block
-        margin-bottom: 4rem
-        color: #1D252D
-
-        @include mobile
-          margin-bottom: 2rem
-
-      .button
-        display: inline-flex
-
-        @include mobile
-          display: flex
-          width: 100%
 
   .promo
     &__list
@@ -469,16 +278,25 @@
         flex-direction: column
 
     &__el
-      display: inline-block
+      display: inline-flex
+      align-items: stretch
       border-radius: 6px
       overflow: hidden
       position: relative
       height: 30rem
 
+      &:hover
+        .promo__get
+          color: $blueColor
+
       @include tablet
         height: 26rem
       @include mobile
         height: 25rem
+
+    &__link
+      display: block
+      width: 100%
 
     &__img
       display: block
@@ -518,7 +336,7 @@
         text-align: left
         margin-bottom: 1rem
 
-      a
+      .promo__get
         text-decoration: underline
         @include transition
 

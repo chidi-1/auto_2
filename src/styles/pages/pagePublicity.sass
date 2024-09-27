@@ -1,0 +1,126 @@
+.page-publicity
+  .page-header
+    position: relative
+    padding: 17rem 0 18rem
+    background-size: cover !important
+
+    @include tablet
+      padding: 12rem 0 12rem
+    @include mobile
+      padding: 11rem 0 11rem
+
+    &:after
+      position: absolute
+      content: ''
+      inset: 0
+
+    &:after
+      z-index: 2
+      background: linear-gradient(to bottom, rgba(5,20,31,0) 0%, rgba(5,20,31,0) 66%, rgba(5,20,31,1)106%)
+
+    .container
+      position: relative
+      z-index: 5
+      align-items: center
+
+      h1
+        margin-bottom: 2rem
+
+      h3
+        margin-bottom: 4rem
+
+      .button
+        display: inline-flex
+
+  .publicity
+    padding-top: 3rem
+
+    @include tablet
+      padding: 5rem 0
+
+    @include mobile
+      padding: 4rem 0
+
+    .breadcrumbs
+      margin-bottom: 4rem
+
+    h2
+      margin-bottom: 4rem
+
+    &__list.grid-4
+      align-items: stretch
+
+      @include tablet
+        grid-template-columns: repeat(3, calc((100% + 2rem) / 3 - 2rem))
+
+      @include mobile
+        margin-bottom: 3rem
+        gap: 1rem
+        grid-template-columns: repeat(2, calc(50% - 0.5rem))
+
+    &__el.hidden-el
+      display: flex
+
+      @include mobile
+        display: none
+
+      &.visible
+        display: flex
+
+    &__el
+      display: flex
+      flex-direction: column
+      background: #eff2f7
+      border-radius: 8px
+      overflow: hidden
+      position: relative
+
+      .button
+        position: absolute
+        left: 2rem
+        right: 2rem
+        bottom: 2rem
+        padding: 0 1rem
+
+        @include tablet
+          left: 1rem
+          right: 1rem
+          bottom: 1rem
+
+    &__img
+      height: 18rem
+      overflow: hidden
+
+      @include tablet
+        height: 14rem
+
+      img
+        min-width: 100%
+        min-height: 100%
+        object-fit: cover
+
+    &__text
+      padding: 2rem 2rem 9rem
+      display: flex
+      flex-direction: column
+      gap: 1rem
+
+      @include tablet
+        padding: 1rem 1rem 8rem
+
+    &__name
+      font-weight: 700
+
+      @include tablet
+        font-weight: 600
+
+    .text-center
+      display: none
+
+      @include mobile
+        display: flex
+        justify-content: center
+
+      .button
+        @include mobile
+          width: 100%

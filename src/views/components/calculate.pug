@@ -1,0 +1,65 @@
+form(action='http://bevolgayan.temp.swtest.ru/promo/auto_2/assets/responseExamples/sendCalculate.json' method='post').calculate__form.main-form
+
+    .grid
+        .calculate__left
+            h4 Рассчитать автокредит
+
+            label.label-slider
+                span.label Сумма кредита
+                .current-value
+                    span.value 100 000 ₽
+
+                input(id='summ' type='range' min="100000" max="10000000" value="100000").input-range.js--range
+
+                .label-slider__values
+                    span 100 000 ₽
+                    span 5 000 000 ₽
+                    span 10 000 000 ₽
+
+            .grid-2
+                label.label-slider
+                    span.label Первоначальный взнос
+                    .current-value
+                        span.value 25 000 ₽
+                        span.percent 25%
+
+                    input(id='start' type='range' min="0" max="100" value="25").input-range.js--range
+
+                    .label-slider__values
+                        span 0%
+                        span 50%
+                        span 100%
+
+                label.label-slider
+                    span.label Срок кредита
+                    .current-value
+                        span.value 3 года
+
+                    input(id='time' type='range' min="6" max="120" value="60").input-range.js--range
+
+                    .label-slider__values
+                        span 6 мес
+                        span 10 лет
+
+        .calculate__right
+            div
+                span.text Ежемесячный платёж
+                span.payment 0 ₽
+            div
+                span.text Минимальная ставка
+                span.rate 10 %
+
+    h4 Отправьте заявку
+    span.calculate__text Наш кредитный специалист свяжется с&nbsp;вами в&nbsp;ближайшее время.
+
+    .grid-3
+        input(type='text' name='name' placeholder='Имя').input.required
+        input(type='text' name='phone' placeholder='+7 999 999-99-99').input.required.js--input-phone
+        button(type='submit' disabled).button.button-blue.js--form-send Отправить заявку
+
+    label.checkbox
+        input(type='checkbox').js--check-policy
+        .checkbox__icon
+        span.checkbox__text Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь
+            =" "
+            a(href='') с&nbsp;политикой обработки персональных данных

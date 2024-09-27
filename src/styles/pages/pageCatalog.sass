@@ -1,0 +1,79 @@
+.page-catalog
+  .page-header
+    h1
+      margin-bottom: 6rem
+
+  .items
+    padding: 4rem 0 5rem
+
+    h2
+      margin-bottom: 2rem
+
+    h3
+      margin-bottom: 6rem
+
+    .container
+      @include tablet
+        display: grid
+        gap: 2rem
+        grid-template-columns: calc((100% + 2rem)/ 3 * 2 - 2rem) calc((100% + 2rem)/ 3 - 2rem)
+
+      @include mobile
+        grid-template-columns: 1fr
+        column-gap: 0
+
+      .select-sort
+        @include tablet
+          grid-column-start: 2
+
+        @include mobile
+          grid-column-start: 1
+          grid-column-end: 3
+          grid-row-start: 2
+          flex-direction: row
+          gap: 1rem
+          max-width: 100%
+          align-items: center
+
+        .choices
+          @include mobile
+            flex: 1
+
+      .titles
+        @include tablet
+          grid-column-start: 1
+          grid-row-start: 1
+        @include mobile
+          grid-column-start: 1
+          grid-column-end: 3
+
+        *
+          @include tablet
+            text-align: left
+
+        h2
+          @include tablet
+            margin-bottom: 1rem
+
+        h3
+          @include tablet
+            font-weight: 400
+            margin-bottom: 0
+
+      .pagination,
+      .items__list
+        @include tablet
+          grid-column-start: 1
+          grid-column-end: 3
+
+  .items__list
+    align-items: stretch
+    margin-bottom: 6rem
+
+    @include tablet
+      margin-bottom: 4rem
+
+    li
+      display: inline-flex
+      align-items: stretch
+

@@ -1,20 +1,95 @@
 {
+  "brand": [
+    {"value": "no", "label":  "Выберите марку", "disabled": "true", "selected":  "true"},
+    {"value": "Susuki", "label": "Susuki"},
+    {"value": "KIA", "label": "KIA"},
+    {"value": "Omoda", "label": "Omoda"}
+  ],
   "Susuki": [
-    {"label":  "Выберите модель", "disabled": "true", "selected":  "true"},
-    { "value": "Susuki1", "label": "Susuki One"},
-    { "value": "Susuki2", "label": "Susuki Two"},
-    { "value": "Susuki3", "label": "Susuki Three"}
+    {"value": "no", "label":  "Выберите модель", "disabled": "true", "selected":  "true"},
+    {"value": "Susuki1",
+      "label": "Susuki One",
+      "bodyshell" : [
+      {"label":  "Выберите кузов", "disabled": "true", "selected":  "true"},
+      {"label":  "Седан", "value": "Седан" },
+      {"label":  "Хэтчбек", "value": "Хэтчбек" }
+      ],
+      "price": "1430000",
+      "image": "http://bevolgayan.temp.swtest.ru/promo/auto_2/assets/img--model-1.jpg"
+    },
+    { "value": "Susuki2", "label": "Susuki Two",
+      "bodyshell" : [
+        {"label":  "Выберите кузов", "disabled": "true", "selected":  "true"},
+        {"label":  "Купе", "value": "Купе" },
+        {"label":  "Универсал", "value": "Универсал" }
+      ],
+      "price": "1430000",
+      "image": "http://bevolgayan.temp.swtest.ru/promo/auto_2/assets/img--model-1.jpg"
+    },
+    { "value": "Susuki3", "label": "Susuki Three",
+      "bodyshell" : [
+        {"label":  "Выберите кузов", "disabled": "true", "selected":  "true"},
+        {"label":  "Седан", "value": "Седан" },
+        {"label":  "Минивэн", "value": "Минивэн" }
+      ],
+      "price": "1430000",
+      "image": "http://bevolgayan.temp.swtest.ru/promo/auto_2/assets/img--model-1.jpg"
+    }
   ],
   "KIA": [
-    {"label":  "Выберите модель", "disabled": "true", "selected":  "true"},
-    { "value": "KIA1", "label": "KIA One"},
-    { "value": "KIA2", "label": "KIA Two"},
-    { "value": "KIA3", "label": "KIA Three"}
+    {"value": "no", "label":  "Выберите модель", "disabled": "true", "selected":  "true"},
+    { "value": "KIA1", "label": "KIA One",
+      "bodyshell" : [
+        {"label":  "Выберите кузов", "disabled": "true", "selected":  "true"},
+        {"label":  "Кабриолет", "value": "Кабриолет" },
+        {"label":  "Кроссовер", "value": "Кроссовер" }
+      ],
+      "price": "1430000",
+      "image": "http://bevolgayan.temp.swtest.ru/promo/auto_2/assets/img--model-1.jpg"
+    },
+    { "value": "KIA2", "label": "KIA Two","bodyshell" : [
+      {"label":  "Выберите кузов", "disabled": "true", "selected":  "true"},
+      {"label":  "Купе", "value": "Купе" },
+      {"label":  "Универсал", "value": "Универсал" }
+    ],
+      "price": "1430000",
+      "image": "http://bevolgayan.temp.swtest.ru/promo/auto_2/assets/img--model-1.jpg"
+    },
+    { "value": "KIA3", "label": "KIA Three",
+      "bodyshell" : [
+        {"label":  "Выберите кузов", "disabled": "true", "selected":  "true"},
+        {"label":  "Седан", "value": "Седан" },
+        {"label":  "Внедорожник", "value": "Внедорожник" }
+      ],
+      "price": "1430000",
+      "image": "http://bevolgayan.temp.swtest.ru/promo/auto_2/assets/img--model-1.jpg"
+    }
   ],
   "Omoda": [
-    {"label":  "Выберите модель", "disabled": "true", "selected":  "true"},
-    { "value": "Omoda1", "label": "Omoda One"},
-    { "value": "Omoda2", "label": "Omoda Two"},
-    { "value": "Omoda3", "label": "Omoda Three"}
+    {"value": "no", "label":  "Выберите модель", "disabled": "true", "selected":  "true"},
+    { "value": "Omoda1", "label": "Omoda One",
+      "bodyshell" : [
+        {"label":  "Выберите кузов", "disabled": "true", "selected":  "true"},
+        {"label":  "Седан", "value": "Седан" },
+        {"label":  "Универсал", "value": "Универсал" }
+      ],
+      "price": "1430000",
+      "image": "http://bevolgayan.temp.swtest.ru/promo/auto_2/assets/img--model-1.jpg"},
+    { "value": "Omoda2", "label": "Omoda Two",
+      "bodyshell" : [
+        {"label":  "Выберите кузов", "disabled": "true", "selected":  "true"},
+        {"label":  "Хэтчбек", "value": "Хэтчбек" },
+        {"label":  "Минивэн", "value": "Минивэн" }
+      ],
+      "price": "1430000",
+      "image": "http://bevolgayan.temp.swtest.ru/promo/auto_2/assets/img--model-1.jpg"},
+    { "value": "Omoda3", "label": "Omoda Three",
+      "bodyshell" : [
+      {"label":  "Выберите кузов", "disabled": "true", "selected":  "true"},
+      {"label":  "Кабриолет", "value": "Кабриолет" },
+      {"label":  "Универсал", "value": "Универсал" }
+    ],
+      "price": "1430000",
+      "image": "http://bevolgayan.temp.swtest.ru/promo/auto_2/assets/img--model-1.jpg"}
   ]
 }

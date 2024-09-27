@@ -18,6 +18,7 @@ h2
 
   @include tablet
     font-size: 3.2rem
+    margin-bottom: 3rem
   @include mobile
     font-size: 2.3rem
 
@@ -26,6 +27,17 @@ h3,
   display: block
   @include font-params(2rem, 1.1, 600)
   text-align: center
+
+  @include tablet
+    font-size: 2rem
+  @include mobile
+    font-size: 1.6rem
+
+h4,
+*.h4
+  display: block
+  @include font-params(2.4rem, 1.2, 600)
+  text-transform: uppercase
 
   @include tablet
     font-size: 2rem
@@ -44,29 +56,31 @@ a
   text-decoration: underline
 
 .breadcrumbs
-  opacity: .5
+  @include flex-center-vert
+  flex-wrap: wrap
+  gap: 2rem
 
-  ul
+  @include mobile
+    row-gap: 1rem
+
+  li
     @include flex-center-vert
-    flex-wrap: wrap
     gap: 2rem
 
-    li
-      @include flex-center-vert
-      gap: 2rem
+    &:not(:last-child)
+      &:after
+        position: absolute
+        content: "/"
+        top: 50%
+        transform: translate(-50%, -50%)
+        right: -1.3rem
 
-      &:not(:last-child)
-        &:after
-          content: ''
-          width: 14px
-          height: 14px
+    span
+      font-size: 1.4rem
 
-      a,
-      span
-        font-size: 1.4rem
+    a
+      text-decoration: none
+      font-size: 1.4rem
 
-      a
-        text-decoration: none
-
-        &:hover
-          text-decoration: underline
+      &:hover
+        text-decoration: underline

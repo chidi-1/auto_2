@@ -1,0 +1,65 @@
+extends ../views/layouts/layout
+
+block vars
+    - var pageClass = 'page-models'
+    - var header = 'dark'
+
+block content
+    section.page-header
+        .container
+            ul.breadcrumbs
+                li
+                    a(href='') Главная
+                li
+                    a(href='') Каталог
+                li
+                    span Mazda
+
+            h1  Модельный ряд автомобилей MAZDA
+
+    section.items
+        .container
+
+            ul.items__list.grid-4
+                li
+                    include ../views/components/item
+                li
+                    include ../views/components/item
+                li
+                    include ../views/components/item
+                li
+                    include ../views/components/item
+                li
+                    include ../views/components/item
+                li
+                    include ../views/components/item
+                li
+                    include ../views/components/item
+                li
+                    include ../views/components/item
+
+            ul.pagination
+                li
+                    a(href='').arrow.prev
+                        svg(width=24 height=24)
+                            use(xlink:href='/src/assets/images/sprite.svg#angle-left')
+                li
+                    span 1
+                li
+                    a(href='') 2
+                li
+                    a(href='') 3
+                li
+                    a(href='') 4
+                li
+                    a(href='') ...
+                li
+                    a(href='') 40
+                li
+                    a(href='').arrow.next
+                        svg(width=24 height=24)
+                            use(xlink:href='/src/assets/images/sprite.svg#angle-left')
+
+    include ../views/components/proposal1
+    include ../views/components/searchBrand
+    include ../views/components/question

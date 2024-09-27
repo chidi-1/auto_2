@@ -1,0 +1,90 @@
+extends ../views/layouts/layout
+
+block vars
+    - var pageClass = 'page-catalog'
+    - var header = 'dark'
+
+block content
+    section.page-header
+        .container
+            ul.breadcrumbs
+                li
+                    a(href='') Главная
+                li
+                    span Каталог
+
+            h1  Каталог
+
+            div(data-url="http://bevolgayan.temp.swtest.ru/promo/auto_2/assets/responseExamples/indexFilterResponse.json").filter
+                .grid-5
+                    select(id='brand').js--select-style.js--brand.js--get-variants
+                        option(selected disabled value='no') Выберите марку
+
+                    select(disabled id='model').js--select-style.js--model.js--get-variants
+                        option(selected disabled) Выберите модель
+
+                    select(disabled id='bodyshell').js--select-style.js--bodyshell.js--get-variants
+                        option(selected disabled) Выберите кузов
+
+                    input(placeholder='Цена от' name='' id='priceMin' data-lastVal='0').input.js--input-number.js--get-variants
+                    input(placeholder='Цена до' name='' id='priceMax' data-lastVal='0').input.js--input-number.js--get-variants
+
+                    button.button.button-blue-border.js--clear-filter Сбросить фильтры
+                    a(href='/catalog').button.button-blue Показать 276 авто
+
+    section.items
+        .container
+            label.select-sort
+                span.label Сортировать&nbsp;по
+                select(id='sort').js--select-style.js--sort
+                    option(value='/sort1' selected disabled) Возрастанию цены
+                    option(value='/sort2') Убывание цены
+
+            .titles
+                h2 Найдено 637 авто
+
+                h3 Используйте фильтры для более точного подбора авто
+
+            ul.items__list.grid-4
+                li
+                    include ../views/components/item
+                li
+                    include ../views/components/item
+                li
+                    include ../views/components/item
+                li
+                    include ../views/components/item
+                li
+                    include ../views/components/item
+                li
+                    include ../views/components/item
+                li
+                    include ../views/components/item
+                li
+                    include ../views/components/item
+
+            ul.pagination
+                li
+                    a(href='').arrow.prev
+                        svg(width=24 height=24)
+                            use(xlink:href='/src/assets/images/sprite.svg#angle-left')
+                li
+                    span 1
+                li
+                    a(href='') 2
+                li
+                    a(href='') 3
+                li
+                    a(href='') 4
+                li
+                    a(href='') ...
+                li
+                    a(href='') 40
+                li
+                    a(href='').arrow.next
+                        svg(width=24 height=24)
+                            use(xlink:href='/src/assets/images/sprite.svg#angle-left')
+
+    include ../views/components/proposal2
+    include ../views/components/searchBrand
+    include ../views/components/question

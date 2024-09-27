@@ -86,9 +86,6 @@ block content
             .grid-5
                 select(id='brand').js--select-style.js--brand.js--get-variants
                     option(selected disabled) Выберите марку
-                    option(value='Susuki') Susuki
-                    option(value='KIA') KIA
-                    option(value='Omoda') Omoda
 
                 select(disabled id='model').js--select-style.js--model.js--get-variants
                     option(selected disabled) Выберите модель
@@ -98,95 +95,7 @@ block content
 
                 a(href='/catalog').button.button-blue Показать 276 авто
 
-    section.brand
-        .container
-            h2  Поиск по&nbsp;марке автомобиля
-
-            .brands
-                ul.brands__logo
-                    li
-                        a(href="")
-                            img(src='/src/assets/images/logos/logo--audi.png' alt='audi')
-                    li
-                        a(href="")
-                            img(src='/src/assets/images/logos/logo--jaguar.png' alt='jaguar')
-                    li
-                        a(href="")
-                            img(src='/src/assets/images/logos/logo--bmw.png' alt='bmw')
-                    li
-                        a(href="")
-                            img(src='/src/assets/images/logos/logo--jeep.png' alt='jeep')
-                    li
-                        a(href="")
-                            img(src='/src/assets/images/logos/logo--chrysler.png' alt='chrysler')
-                    li
-                        a(href="")
-                            img(src='/src/assets/images/logos/logo--kia.png' alt='kia')
-                    li
-                        a(href="")
-                            img(src='/src/assets/images/logos/logo--ford.png' alt='ford')
-                    li
-                        a(href="")
-                            img(src='/src/assets/images/logos/logo--landrover.png' alt='landrover')
-                    li
-                        a(href="")
-                            img(src='/src/assets/images/logos/logo--hyundai.png' alt='hyundai')
-                    li
-                        a(href="")
-                            img(src='/src/assets/images/logos/logo--lexus.png' alt='lexus')
-
-                ul.brands__text.list-contains-hidden
-                    li
-                        a(href='') Susuki
-                    li
-                        a(href='') Pegeout
-                    li
-                        a(href='') Ford
-                    li
-                        a(href='') Mazda
-                    li
-                        a(href='') Haval
-                    li
-                        a(href='') Renault
-                    li
-                        a(href='') KIA
-                    li
-                        a(href='') Honda
-                    li
-                        a(href='') Volvo
-                    li
-                        a(href='') Jaecoo
-                    li
-                        a(href='') Geely
-                    li
-                        a(href='') Citroen
-                    li
-                        a(href='') Omoda
-                    li
-                        a(href='') Haval
-                    li
-                        a(href='') Audi
-                    li
-                        a(href='') Volkswagen
-                    li
-                        a(href='') Land Rover
-                    li
-                        a(href='') Chery
-                    li.hidden-el
-                        a(href='') Susuki
-                    li.hidden-el
-                        a(href='') Pegeout
-                    li.hidden-el
-                        a(href='') Ford
-                    li.hidden-el
-                        a(href='') Mazda
-                    li.hidden-el
-                        a(href='') Haval
-                    li.hidden-el
-                        a(href='') Renault
-
-            .text-center
-                button(data-hide='Скрыть' data-show='Показать все').button.button-blue-border.js--toggle-hidden Показать все
+    include ../views/components/searchBrand
 
     section.new.bg-blue
         .container
@@ -194,26 +103,7 @@ block content
 
             include ../views/components/items
 
-    section.proposal
-        .container
-            ul.proposal__caption
-                li
-                    a(href='') Автокредит
-                li
-                    a(href='') Trade-In
-                li.active
-                    span Специальное предложение
-
-            .proposal__content
-                picture.proposal__bg
-                    source(type='img/webp' srcset='/src/assets/images/img--proposal-1.webp 1x, /src/assets/images/img--proposal-1@2x.webp 2x')
-                    source(type='img/jpg' srcset='/src/assets/images/img--proposal-1.jpg 1x, /src/assets/images/img--proposal-1@2x.jpg 2x')
-                    img(srcset='/src/assets/images/img--proposal-1.jpg 1x, /src/assets/images/img--proposal-1@2x.jpg 2x' alt='')
-
-                .proposal__text
-                    h2 Комплект зимних Шин в&nbsp;подарок!
-                    span При покупке автомобиля в&nbsp;нашем автосалоне
-                    a(href='').button.button-blue Получить предложение
+    include ../views/components/proposal3
 
     section.new.bg-blue
         .container
@@ -227,55 +117,41 @@ block content
 
             ul.promo__list
                 li.promo__el
-                    .promo__img
-                        picture
-                            source(type='img/webp' srcset='/src/assets/images/img--promo-1.webp 1x, /src/assets/images/img--promo-1@2x.webp 2x')
-                            source(type='img/jpg' srcset='/src/assets/images/img--promo-1.jpg 1x, /src/assets/images/img--promo-1@2x.jpg 2x')
-                            img(srcset='/src/assets/images/img--promo-1.jpg 1x, /src/assets/images/img--promo-1@2x.jpg 2x' alt='')
+                    a(href='').promo__link
+                        .promo__img
+                            picture
+                                source(type='img/webp' srcset='/src/assets/images/img--promo-1.webp 1x, /src/assets/images/img--promo-1@2x.webp 2x')
+                                source(type='img/jpg' srcset='/src/assets/images/img--promo-1.jpg 1x, /src/assets/images/img--promo-1@2x.jpg 2x')
+                                img(srcset='/src/assets/images/img--promo-1.jpg 1x, /src/assets/images/img--promo-1@2x.jpg 2x' alt='')
 
-                    .promo__content
-                        h3 Низкий процент по&nbsp;кредиту с&nbsp;банками партнёрами
-                        a(href='') Получить предложение
-
-                li.promo__el
-                    .promo__img
-                        picture
-                            source(type='img/webp' srcset='/src/assets/images/img--promo-2.webp 1x, /src/assets/images/img--promo-2@2x.webp 2x')
-                            source(type='img/jpg' srcset='/src/assets/images/img--promo-2.jpg 1x, /src/assets/images/img--promo-2@2x.jpg 2x')
-                            img(srcset='/src/assets/images/img--promo-2.jpg 1x, /src/assets/images/img--promo-2@2x.jpg 2x' alt='')
-
-                    .promo__content
-                        h3 КАСКО и&nbsp;ОСАГО в&nbsp;подарок при покупке авто в&nbsp;кредит
-                        a(href='') Получить предложение
+                        .promo__content
+                            h3 Низкий процент по&nbsp;кредиту с&nbsp;банками партнёрами
+                            .promo__get Получить предложение
 
                 li.promo__el
-                    .promo__img
-                        picture
-                            source(type='img/webp' srcset='/src/assets/images/img--promo-3.webp 1x, /src/assets/images/img--promo-3@2x.webp 2x')
-                            source(type='img/jpg' srcset='/src/assets/images/img--promo-3.jpg 1x, /src/assets/images/img--promo-3@2x.jpg 2x')
-                            img(srcset='/src/assets/images/img--promo-3.jpg 1x, /src/assets/images/img--promo-3@2x.jpg 2x' alt='')
+                    a(href='').promo__link
+                        .promo__img
+                            picture
+                                source(type='img/webp' srcset='/src/assets/images/img--promo-2.webp 1x, /src/assets/images/img--promo-2@2x.webp 2x')
+                                source(type='img/jpg' srcset='/src/assets/images/img--promo-2.jpg 1x, /src/assets/images/img--promo-2@2x.jpg 2x')
+                                img(srcset='/src/assets/images/img--promo-2.jpg 1x, /src/assets/images/img--promo-2@2x.jpg 2x' alt='')
 
-                    .promo__content
-                        h3 Получите выгоду по&nbsp;Trade-In до&nbsp;300&nbsp;000&nbsp;₽
-                        a(href='') Получить предложение
+                        .promo__content
+                            h3 КАСКО и&nbsp;ОСАГО в&nbsp;подарок при покупке авто в&nbsp;кредит
+                            .promo__get Получить предложение
 
-    section.question
-        .container
-            .form
-                h2 Остались вопросы?
-                p.form__description Заполните форму и&nbsp;отправьте заявку. Мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время и&nbsp;ответим на&nbsp;все интересующие вас вопросы
+                li.promo__el
+                    a(href='').promo__link
+                        .promo__img
+                            picture
+                                source(type='img/webp' srcset='/src/assets/images/img--promo-3.webp 1x, /src/assets/images/img--promo-3@2x.webp 2x')
+                                source(type='img/jpg' srcset='/src/assets/images/img--promo-3.jpg 1x, /src/assets/images/img--promo-3@2x.jpg 2x')
+                                img(srcset='/src/assets/images/img--promo-3.jpg 1x, /src/assets/images/img--promo-3@2x.jpg 2x' alt='')
 
-                form(action='' method='post').main-form
-                    .grid-3
-                        input(type='text' name='name' placeholder='Имя').input.required
-                        input(type='text' name='phone' placeholder='+7 999 999-99-99').input.required.js--input-phone
-                        button(type='submit' disabled).button.button-blue.js--form-send Отправить заявку
+                        .promo__content
+                            h3 Получите выгоду по&nbsp;Trade-In до&nbsp;300&nbsp;000&nbsp;₽
+                            .promo__get Получить предложение
 
-                    label.checkbox
-                        input(type='checkbox').js--check-policy
-                        .checkbox__icon
-                        span.checkbox__text Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь
-                            =" "
-                            a(href='') с&nbsp;политикой обработки персональных данных
+    include ../views/components/question
 
 

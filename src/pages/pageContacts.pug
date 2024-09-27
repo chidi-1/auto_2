@@ -1,0 +1,41 @@
+extends ../views/layouts/layout
+
+block vars
+    - var pageClass = 'page-contacts'
+    - var header = 'dark'
+
+block content
+    script(src="https://api-maps.yandex.ru/2.1/?apikey=a05aacec-6f3a-46fa-a45b-ad4882c9f689&lang=ru_RU" type="text/javascript")
+
+    section.page-header
+        .container
+            h1  Контакты
+
+    section.contacts
+        .container
+            ul.breadcrumbs
+                li
+                    a(href='') Главная
+                li
+                    span Контакты
+
+            .contacts__content
+                .contacts__text
+                    .row
+                        a(href='tel:+79999999999').phone +7&nbsp;999 999-99-99
+                        a(href='tel:+70000000000').phone +7 (000) 000&mdash;00&mdash;00
+
+                    .row
+                        span г. Москва, Варшавское шоссе 4
+
+                        div
+                            span Пн-Пт с&nbsp;9:00 до&nbsp;18:00
+                            span Сб-Вс с&nbsp;10:00 до&nbsp;17:00
+
+                        a(href='mailto:pochtaa@mail.ru') pochtaa@mail.ru
+
+
+                .contacts__map
+                    div(id="map")
+
+    include ../views/components/question

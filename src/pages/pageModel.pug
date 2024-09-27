@@ -1,0 +1,356 @@
+extends ../views/layouts/layout
+
+block vars
+    - var pageClass = 'page-model'
+    - var header = 'dark'
+
+block content
+    section.model
+        .container
+            ul.breadcrumbs
+                li
+                    a(href='') Главная
+                li
+                    a(href='') Каталог
+                li
+                    a(href='') Mazda
+                li
+                    span MAZDA 6 ATENZA
+
+            .model__content
+                .model__left.tabs
+                    .tabs__content(data-target='color').active
+                        .tabs
+                            .tabs__content(data-target='img').active
+                                .model__img
+                                    a(href='/src/assets/images/img--auto.jpg' data-fancybox='black' data-caption="Single image")
+                                        img(src='/src/assets/images/img--auto.jpg'  alt='')
+
+                            .tabs__content(data-target='img')
+                                .model__img
+                                    a(href='/src/assets/images/img--auto-2.jpg' data-fancybox='black' data-caption="Single image")
+                                        img(src='/src/assets/images/img--auto-2.jpg'  alt='')
+
+                            ul.tabs__caption.model__preview
+                                li(data-target='img').active
+                                    img(src='/src/assets/images/img--auto.jpg'  alt='')
+                                li(data-target='img')
+                                    img(src='/src/assets/images/img--auto-2.jpg'  alt='')
+                                li.no-tab
+                                    a(href='/src/assets/images/img--auto.jpg' data-fancybox='black' data-caption="New image")
+                                        img(src='/src/assets/images/img--auto.jpg' alt='')
+                                        span +6 фото
+                                li.hidden
+                                    a(href='/src/assets/images/img--auto.jpg' data-fancybox='black' data-caption="Hidden image")
+                                    a(href='/src/assets/images/img--auto.jpg' data-fancybox='black' data-caption="Hidden image1")
+                                    a(href='/src/assets/images/img--auto.jpg' data-fancybox='black' data-caption="Hidden image2")
+                                    a(href='/src/assets/images/img--auto.jpg' data-fancybox='black' data-caption="Hidden image")
+                                    a(href='/src/assets/images/img--auto.jpg' data-fancybox='black' data-caption="Hidden image1")
+                                    a(href='/src/assets/images/img--auto.jpg' data-fancybox='black' data-caption="Hidden image2")
+
+                    .tabs__content(data-target='color')
+                        .tabs
+                            .tabs__content(data-target='img').active
+                                .model__img
+                                    a(href='/src/assets/images/img--auto-white.jpg' data-fancybox='white' data-caption="Single image")
+                                        img(src='/src/assets/images/img--auto-white.jpg'  alt='')
+
+                            .tabs__content(data-target='img')
+                                .model__img
+                                    a(href='/src/assets/images/img--auto-white-2.jpg' data-fancybox='white' data-caption="Single image")
+                                        img(src='/src/assets/images/img--auto-white-2.jpg'  alt='')
+
+                            ul.tabs__caption.model__preview
+                                li(data-target='img').active
+                                    img(src='/src/assets/images/img--auto-white.jpg'  alt='')
+                                li(data-target='img')
+                                    img(src='/src/assets/images/img--auto-white-2.jpg'  alt='')
+                                li.no-tab
+                                    a(href='/src/assets/images/img--auto-white.jpg' data-fancybox='white' data-caption="New image")
+                                        img(src='/src/assets/images/img--auto-white.jpg' alt='')
+                                        span +2 фото
+                                li.hidden
+                                    a(href='/src/assets/images/img--auto-white.jpg' data-fancybox='white' data-caption="Hidden image")
+                                    a(href='/src/assets/images/img--auto-white.jpg' data-fancybox='white' data-caption="Hidden image1")
+
+                    .colors
+                        span.current Цвет: Черный
+
+                    ul.tabs__caption.colors__list
+                        li(data-color='Черный' style='background: #000' data-target='color').active
+                        li(data-color='Белый' style='background: #EAEBED' data-target='color')
+
+
+                .model__right
+                    .model__info
+                        h1.model__name MAZDA 6 ATENZA
+                        .model__price
+                            span.year от&nbsp;1&nbsp;430&nbsp;000&nbsp;₽
+                            span.month от&nbsp;20&nbsp;144&nbsp;₽&nbsp;/ мес
+
+                        .model__buttons
+                            button.button.button-blue Купить в&nbsp;кредит
+                            button.button.button-blue-border Trade-In
+
+                    ul.model__params
+                        li
+                            span.name Объём двигателя
+                            span.value 2 л.
+                        li
+                            span.name Мощность
+                            span.value 150 л.с
+                        li
+                            span.name Разгон от&nbsp;0&nbsp;до&nbsp;100&nbsp;км/ч
+                            span.value 10,5 с
+                        li
+                            span.name Максимальная скорость
+                            span.value 207 км/ч
+                        li
+                            span.name Расход на&nbsp;100&nbsp;км
+                            span.value 7,1 л
+                        li
+                            span.name Тип двигателя
+                            span.value Бензин
+                        li
+                            span.name КПП
+                            span.value АКПП
+
+    section.calculate.bg-blue
+        .container
+            include ../views/components/calculate
+
+    section.actions
+        .container
+            .tabs
+                ul.tabs__caption
+                    li.active Комплектации и&nbsp;цены
+                    li Модификации
+
+                .tabs__content.active
+                    .table.completions
+                        .table__caption
+                            strong 1,6&nbsp;MT
+                            = " "
+                            | 150 л.с. бензин передний
+
+                        .table__content
+                            .table__row
+                                .completions__el
+                                    .completions__name
+                                        h4 Drive
+                                        button.js--toggle-params
+                                            svg(width=20 height=20)
+                                                use(xlink:href='/src/assets/images/sprite.svg#angle-down')
+
+                                    .completions__params
+                                        h4.all от&nbsp;1&nbsp;098&nbsp;000
+                                        span.credit В&nbsp;кредит от&nbsp;11&nbsp;500&nbsp;₽&nbsp;/ мес
+
+                                    .completions__buttons
+                                        button.button.button-blue Купить в&nbsp;кредит
+                                        button.button.button-blue-border Trade-In
+                                        button.button.button-black-border Бронь
+
+                                .completions__info
+                                    ul.info
+                                        li.info__el
+                                            span Светодиодные ходовые огни
+                                        li.info__el
+                                            span Светодиодные задние фонари
+                                        li.info__el
+                                            span Передние / задние противотуманные фары
+                                        li.info__el
+                                            span Галогеновые фары
+                                        li.info__el
+                                            span Выключение света с задержкой, функция "проводи меня домой"
+                                        li.info__el
+                                            span Электрокорректор положения фар
+
+                            .table__row.completions__el
+                                .completions__name
+                                    h4 LIFE
+
+                                .completions__params
+                                    h4.all от&nbsp;1&nbsp;098&nbsp;000
+                                    span.credit В&nbsp;кредит от&nbsp;11&nbsp;500&nbsp;₽&nbsp;/ мес
+
+                                .completions__buttons
+                                    button.button.button-blue Купить в&nbsp;кредит
+                                    button.button.button-blue-border Trade-In
+                                    button.button.button-black-border Бронь
+
+                    .table.completions
+                        .table__caption
+                            strong 2&nbsp;MT
+                            |
+                            | 150 л.с. бензин передний
+
+                        .table__content
+                            .table__row.completions__el
+                                .completions__name
+                                    h4 Drive
+
+                                .completions__params
+                                    h4.all от&nbsp;1&nbsp;098&nbsp;000
+                                    span.credit В&nbsp;кредит от&nbsp;11&nbsp;500&nbsp;₽&nbsp;/ мес
+
+                                .completions__buttons
+                                    button.button.button-blue Купить в&nbsp;кредит
+                                    button.button.button-blue-border Trade-In
+                                    button.button.button-black-border Бронь
+
+                            .table__row.completions__el
+                                .completions__name
+                                    h4 LIFE
+
+                                .completions__params
+                                    h4.all от&nbsp;1&nbsp;098&nbsp;000
+                                    span.credit В&nbsp;кредит от&nbsp;11&nbsp;500&nbsp;₽&nbsp;/ мес
+
+                                .completions__buttons
+                                    button.button.button-blue Купить в&nbsp;кредит
+                                    button.button.button-blue-border Trade-In
+                                    button.button.button-black-border Бронь
+
+                            .table__row.completions__el
+                                .completions__name
+                                    h4 COMFORT
+
+                                .completions__params
+                                    h4.all от&nbsp;1&nbsp;098&nbsp;000
+                                    span.credit В&nbsp;кредит от&nbsp;11&nbsp;500&nbsp;₽&nbsp;/ мес
+
+                                .completions__buttons
+                                    button.button.button-blue Купить в&nbsp;кредит
+                                    button.button.button-blue-border Trade-In
+                                    button.button.button-black-border Бронь
+
+                            .table__row.completions__el
+                                .completions__name
+                                    h4 LUXE
+
+                                .completions__params
+                                    h4.all от&nbsp;1&nbsp;098&nbsp;000
+                                    span.credit В&nbsp;кредит от&nbsp;11&nbsp;500&nbsp;₽&nbsp;/ мес
+
+                                .completions__buttons
+                                    button.button.button-blue Купить в&nbsp;кредит
+                                    button.button.button-blue-border Trade-In
+                                    button.button.button-black-border Бронь
+
+                .tabs__content
+                    .table-scroll-weap
+                        .table.modifications
+                            .table__caption
+                                span
+                                span 1,6&nbsp;МТ 150 л.с
+                                span 1,6&nbsp;МТ 150 л.с
+                                span 2&nbsp;МТ 150 л.с
+                                span 2&nbsp;МТ 150 л.с
+
+                            .table__content
+                                details(open)
+                                    summary
+                                        h4 Общая информация
+
+                                    .content
+                                        .table__row
+                                            span Класс автомобиля
+                                            span 3
+                                            span 3
+                                            span 3
+                                            span 3
+
+                                        .table__row
+                                            span Количество дверей
+                                            span 5
+                                            span 5
+                                            span 5
+                                            span 5
+
+                                        .table__row
+                                            span Количество мест
+                                            span 5
+                                            span 5
+                                            span 5
+                                            span 5
+
+                                        .table__row
+                                            span Коробка
+                                            span Механика
+                                            span Автомат
+                                            span Автомат
+                                            span Автомат
+
+                                details
+                                    summary
+                                        h4  Общая информация
+
+                                    .content
+                                        .table__row
+                                            span Класс автомобиля
+                                            span 3
+                                            span 3
+                                            span 3
+                                            span 3
+
+                                        .table__row
+                                            span Количество дверей
+                                            span 5
+                                            span 5
+                                            span 5
+                                            span 5
+
+                                        .table__row
+                                            span Количество мест
+                                            span 5
+                                            span 5
+                                            span 5
+                                            span 5
+
+                                        .table__row
+                                            span Коробка
+                                            span Механика
+                                            span Автомат
+                                            span Автомат
+                                            span Автомат
+
+                                details
+                                    summary
+                                        h4  Общая информация
+
+                                    .content
+                                        .table__row
+                                            span Класс автомобиля
+                                            span 3
+                                            span 3
+                                            span 3
+                                            span 3
+
+                                        .table__row
+                                            span Количество дверей
+                                            span 5
+                                            span 5
+                                            span 5
+                                            span 5
+
+                                        .table__row
+                                            span Количество мест
+                                            span 5
+                                            span 5
+                                            span 5
+                                            span 5
+
+                                        .table__row
+                                            span Коробка
+                                            span Механика
+                                            span Автомат
+                                            span Автомат
+                                            span Автомат
+
+
+    section.bg-blue
+        .container
+            include ../views/components/items
+    include ../views/components/proposal1
+    include ../views/components/question

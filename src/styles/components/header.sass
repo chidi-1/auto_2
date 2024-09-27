@@ -40,6 +40,7 @@
       position: relative
       z-index: 10
       height: 5.5rem
+      box-shadow: 0 4px 30px rgba(0,0,0,0.25)
 
   &__bottom
     padding: 2.4rem 0
@@ -98,11 +99,23 @@
       display: none
 
     span
-      @include font-params(1.4rem, auto, #838383)
+      color: #838383
+      @include font-params(1.4rem, auto, 400)
+
+      @include tablet
+        font-size: 1.1rem
 
   &__logo
+    @include transition
+
+    &:hover
+      transform: scale(1.05)
+
     img
       max-width: 19.5rem
+
+      @include tablet
+        max-width: 16rem
 
       @include mobile
         max-width: 14rem
@@ -123,6 +136,9 @@
     span
       @include font-params(1.4rem, auto, #838383)
       @include transition
+
+      @include tablet
+        font-size: 1.1rem
 
   &__hamburger
     position: relative
@@ -167,7 +183,10 @@
     &__list
       display: flex
       justify-content: center
-      gap: 4rem
+
+      &:hover
+        .nav__el:not(:hover)
+          opacity: .5
 
       @include mobile
         flex-direction: column
@@ -177,18 +196,21 @@
 
     &__el
       display: inline-block
+      padding: 0 2rem
+      @include transition
 
       @include mobile
         text-align: left
+        padding: 0 1.25rem
 
     &__link
       display: block
       @include font-params(1.4rem, auto)
       text-decoration: none
 
+      @include tablet
+        font-size: 1.2rem
+
       @include mobile
         color: #1D252D !important
         font-weight: 500
-
-      &:hover
-        color: $blueColor !important

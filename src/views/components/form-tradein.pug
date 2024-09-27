@@ -1,0 +1,37 @@
+form(action='http://bevolgayan.temp.swtest.ru/promo/auto_2/assets/responseExamples/sendForm.json' method='post').main-form
+    .grid-2
+        label.label-input.label-input-full
+            h3 Ваш автомобиль
+            p Заполните информацию о&nbsp;вашем автомобиле. Мы&nbsp;объективно оценим его рыночную стоимость.
+
+        label.label-input.label-input-full
+            span.label Вы выбрали:
+            input(type='text' name='brand' placeholder='Марка' disabled value='MAZDA 6 ATENZA от 1 430 000 ₽').input
+
+        label.label-input
+            span.label  Введите марку
+            input(type='text' name='brand' placeholder='Марка').input
+
+        label.label-input
+            span.label Введите модель
+            input(type='text' name='model' placeholder='Модель').input
+
+        label.label-input
+            span.label Введите год выпуска
+            input(type='text' name='year' placeholder='Год выпуска').input
+
+        label.label-input
+            span.label Введите пробег, км
+            input(type='text' name='mileage' placeholder='Пробег').input
+
+    .grid-3
+        input(type='text' name='name' placeholder='Имя').input.required
+        input(type='text' name='phone' placeholder='+7 999 999-99-99').input.required.js--input-phone
+        button(type='submit' disabled).button.button-blue.js--form-send Отправить заявку
+
+    label.checkbox
+        input(type='checkbox').js--check-policy
+        .checkbox__icon
+        span.checkbox__text Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь
+            =" "
+            a(href='') с&nbsp;политикой обработки персональных данных

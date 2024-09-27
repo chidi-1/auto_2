@@ -1,0 +1,155 @@
+extends ../views/layouts/layout
+
+block vars
+    - var pageClass = 'page-tradein'
+    - var header = 'light'
+
+block content
+    section(style='background: url(/src/assets/images/bg--tradein.jpg) no-repeat 50% 50%').page-header.dark
+        .container
+            h1 Обмен авто по&nbsp;программе TRADe-IN
+            h3 Обменяйте старый автомобиль на&nbsp;новый с&nbsp;выгодой!
+                br
+                | Профессиональная оценка и&nbsp;честные условия.
+            .text-center
+                button(data-fancybox data-src="#getOffer").button.button-white Оставить заявку
+
+    section.tradein
+        .container
+            ul.breadcrumbs
+                li
+                    a(href='') Главная
+                li
+                    span Trade-in
+
+            h2 оставить заявку на&nbsp;trade-in
+
+            form(action='' method='').main-form
+                .tabs
+                    ul.tabs__caption
+                        li.active Желаемый автомобиль
+                        li.disabled Ваш автомобиль
+                        li.disabled Контакты
+
+                    .tabs__content.step-1.active
+                        .grid-2
+                            .row
+                                div
+                                    h3 Желаемый автомобиль
+                                    p Выберите марку и&nbsp;модель. Мы&nbsp;предложим вам список автомобилей в&nbsp;наличии.
+
+                                div
+                                    select(id='brand').js--select-style.js--brand
+                                        option(selected disabled) Выберите марку
+
+                                    select(disabled id='model').js--select-style.js--model
+                                        option(selected disabled) Выберите модель
+
+                                button(data-target='1' type='button' disabled).button.button-blue.js--switch-tab Далее
+
+                            .row
+                                div
+                                    label.label-input
+                                        span.label Вы выбрали:
+
+                                        input(type='text' name='' value='Здесь будет автомобиль 0 ₽' disabled).input.js--choiced-model
+
+                                    .tradein__image
+                                        img(data-none='http://bevolgayan.temp.swtest.ru/src/assets/images/img--model-none.png' src='/src/assets/images/img--model-none.png' alt='Выбранная модель')
+
+                    .tabs__content.step-2
+                        .grid-2.title
+                            .row
+                                div
+                                    h3 Ваш автомобиль
+                                    p Заполните информацию о&nbsp;вашем автомобиле. Мы&nbsp;объективно оценим его рыночную стоимость.
+
+                            .row
+                                div
+                                    label.label-input
+                                        span.label Вы выбрали:
+
+                                        input(type='text' name='' value='Здесь будет автомобиль 0 ₽' disabled).input.js--choiced-model
+
+                        .grid-2.own
+                            label.label-input
+                                span.label Введите модель
+                                input(type='text' name='' value='' placeholder=' Модель').input
+                            label.label-input
+                                span.label Введите марку
+                                input(type='text' name='' value='' placeholder=' Марка').input
+                            label.label-input
+                                span.label Введите год выпуска
+                                input(type='text' name='' value='' placeholder=' Год выпуска').input
+                            label.label-input
+                                span.label Введите пробег, км
+                                input(type='text' name='' value='' placeholder=' Пробег').input
+
+                        .buttons
+                            button(data-target='0' type='button').button.button-blue-border.js--switch-tab Назад
+                            button(data-target='2' type='button').button.button-blue.js--switch-tab Далее
+
+                    .tabs__content.step-3
+                        .grid-2.title
+                            .row
+                                div
+                                    h3 Свяжитесь с&nbsp;нами
+                                    p Оставьте ваши контакты и&nbsp;отправьте заявку. Мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.
+
+                            .row
+                                div
+                                    label.label-input
+                                        span.label Вы выбрали:
+
+                                        input(type='text' name='' value='Здесь будет автомобиль 0 ₽' disabled).input.js--choiced-model
+
+                        .grid-2.own
+                            label.label-input
+                                span.label Ваше имя
+                                input(type='text' name='' value='' placeholder=' Иван Иванов').input.required
+                            label.label-input
+                                span.label Номер телефона
+                                input(type='text' name='' value='' placeholder=' +7 999 999-99-99').input.required.js--input-phone
+
+                        .buttons
+                            button(data-target='1' type='button').button.button-blue-border.js--switch-tab Назад
+                            button( type='sumbit').button.button-blue.js--form-send Отправиь заявку
+
+    section.benefits.bg-blue
+        .container
+            h2 Преимущества Trade-In
+
+            ul.benefits__list.grid-2
+                li.benefits__el
+                    .benefits__icon
+                        img(src='/src/assets/images/icon-benefit-4.svg' alt='Иконка')
+
+                    .benefits__text
+                        h3 Удобная форма оплаты
+                        p Вы&nbsp;можете доплатить разницу наличными или оформить кредит на&nbsp;выгодных условиях.
+
+                li.benefits__el
+                    .benefits__icon
+                        img(src='/src/assets/images/icon-benefit-4.svg' alt='Иконка')
+
+                    .benefits__text
+                        h3 Прозрачность сделки
+                        p Оценка автомобиля происходит у&nbsp;нас в&nbsp;автосалоне, что обеспечивает прозрачность сделки.
+
+                li.benefits__el
+                    .benefits__icon
+                        img(src='/src/assets/images/icon-benefit-4.svg' alt='Иконка')
+
+                    .benefits__text
+                        h3 Экономия времени
+                        p Вы&nbsp;экономите своё время, т.к.&nbsp;не&nbsp;тратите его на&nbsp;поиск покупателей и&nbsp;демонстрации автомобиля.
+
+                li.benefits__el
+                    .benefits__icon
+                        img(src='/src/assets/images/icon-benefit-4.svg' alt='Иконка')
+
+                    .benefits__text
+                        h3 Новый автомобиль у&nbsp;вас
+                        p Вы&nbsp;сразу начинаете пользоваться новым автомобилем, не&nbsp;дожидаясь реализации вашего старого автомобиля.
+
+    include ../views/components/question

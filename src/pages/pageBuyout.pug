@@ -1,0 +1,93 @@
+extends ../views/layouts/layout
+
+block vars
+    - var pageClass = 'page-buyout'
+    - var header = 'light'
+
+block content
+    section(style='background: url(/src/assets/images/bg--buyout.jpg) no-repeat 50% 50%').page-header.dark
+        .container
+            h1 Обмен авто по&nbsp;программе TRADe-IN
+            h3 Обменяйте старый автомобиль на&nbsp;новый с&nbsp;выгодой!
+                br
+                | Профессиональная оценка и&nbsp;честные условия.
+            .text-center
+                button(data-fancybox data-src="#getOffer").button.button-white Оставить заявку
+
+    section.tradein
+        .container
+            ul.breadcrumbs
+                li
+                    a(href='') Главная
+                li
+                    span Trade-in
+
+            h2 Оставить Заявку на&nbsp;выкуп
+
+            form(action='' method='').main-form
+                .tabs__content.active
+                    .grid-2
+                        .row
+                            div
+                                h3 Ваш автомобиль
+
+                            div
+                                label.label-input
+                                    input(type='text' name='' placeholder='Введите марку и модель').input.reqired
+                                label.label-input
+                                    input(type='number' name='' placeholder='Год выпуска').input.reqired
+                                label.label-input
+                                    input(type='number' name='' placeholder='Пробег (км)').input.reqired
+
+
+                        .row
+                            div
+                                h3 Контактные данные
+
+                            div
+                                label.label-input
+                                    input(type='text' name='' placeholder='ФИО').input.reqired
+                                label.label-input
+                                    input(type='text' name='' placeholder='+7 999 999-99-99').input.reqired.js--input-phone
+
+                            div
+                                button(type='submit' disabled).button.button-blue.js--form-send Отправить заявку
+
+                                label.checkbox
+                                    input(type='checkbox').js--check-policy
+                                    .checkbox__icon
+                                    span.checkbox__text Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь
+                                        =" "
+                                        a(href='') с&nbsp;политикой обработки персональных данных
+
+    section.benefits.bg-blue
+        .container
+            h2 Преимущества выкупа
+
+            ul.benefits__list.grid-3
+                li.benefits__el
+                    .benefits__icon
+                        img(src='/src/assets/images/icon-benefit-4.svg' alt='Иконка')
+
+                    .benefits__text
+                        h3 Скорость и&nbsp;удобство
+                        p Вам не&nbsp;нужно искать покупателя, договариваться о&nbsp;встрече и&nbsp;оформлять документы самостоятельно.
+
+                li.benefits__el
+                    .benefits__icon
+                        img(src='/src/assets/images/icon-benefit-4.svg' alt='Иконка')
+
+                    .benefits__text
+                        h3 Прозрачная оценка
+                        p Мы&nbsp;предлагаем честную оценку вашего автомобиля, опираясь на&nbsp;рыночные данные и&nbsp;состояние вашего авто.
+
+                li.benefits__el
+                    .benefits__icon
+                        img(src='/src/assets/images/icon-benefit-4.svg' alt='Иконка')
+
+                    .benefits__text
+                        h3 Быстрая оплата
+                        p Мы&nbsp;оплачиваем выкуп автомобиля в&nbsp;кратчайшие сроки, обычно в&nbsp;день обращения.
+
+
+    include ../views/components/question

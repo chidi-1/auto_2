@@ -1,0 +1,92 @@
+extends ../views/layouts/layout
+
+block vars
+    - var pageClass = 'page-publicity'
+    - var header = 'light'
+
+block content
+    section(style='background: url(/src/assets/images/bg--publicity.jpg) no-repeat 50% 50%').page-header.dark
+        .container
+            h1 Акции
+            h3 Спешите, количество предложений
+                br
+                | ограничено!
+            .text-center
+                button(data-fancybox data-src="#getOffer").button.button-white Оставить заявку
+
+    section.publicity
+        .container
+            ul.breadcrumbs
+                li
+                    a(href='') Главная
+                li
+                    span Акции
+
+            h2 Наши акции
+
+            ul.publicity__list.grid-4
+                li.publicity__el
+                    .publicity__img
+                        img(src='/src/assets/images/img--publicity-1.jpg' alt='')
+                    .publicity__text
+                        span.publicity__name Счастливые часы до&nbsp;12:00
+                        p.publicity__description Дополнительная скидка на&nbsp;все автомобили 25&nbsp;000&nbsp;₽
+                    button.button.button-blue Получить предложение
+
+                li.publicity__el
+                    .publicity__img
+                        img(src='/src/assets/images/img--publicity-2.jpg' alt='')
+                    .publicity__text
+                        span.publicity__name Скидка 20%
+                        p.publicity__description По&nbsp;госпрограммам семейный и&nbsp;первый автомобиль
+                    button.button.button-blue Получить предложение
+                li.publicity__el
+                    .publicity__img
+                        img(src='/src/assets/images/img--publicity-1.jpg' alt='')
+                    .publicity__text
+                        span.publicity__name Счастливые часы до&nbsp;12:00
+                        p.publicity__description Дополнительная скидка на&nbsp;все автомобили 25&nbsp;000&nbsp;₽
+                    button.button.button-blue Получить предложение
+
+                li.publicity__el
+                    .publicity__img
+                        img(src='/src/assets/images/img--publicity-2.jpg' alt='')
+                    .publicity__text
+                        span.publicity__name Скидка 20%
+                        p.publicity__description По&nbsp;госпрограммам семейный и&nbsp;первый автомобиль
+                    button.button.button-blue Получить предложение
+                li.publicity__el
+                    .publicity__img
+                        img(src='/src/assets/images/img--publicity-1.jpg' alt='')
+                    .publicity__text
+                        span.publicity__name Счастливые часы до&nbsp;12:00
+                        p.publicity__description Дополнительная скидка на&nbsp;все автомобили 25&nbsp;000&nbsp;₽
+                    button.button.button-blue Получить предложение
+
+                li.publicity__el
+                    .publicity__img
+                        img(src='/src/assets/images/img--publicity-2.jpg' alt='')
+                    .publicity__text
+                        span.publicity__name Скидка 20%
+                        p.publicity__description По&nbsp;госпрограммам семейный и&nbsp;первый автомобиль
+                    button.button.button-blue Получить предложение
+                li.publicity__el.hidden-el
+                    .publicity__img
+                        img(src='/src/assets/images/img--publicity-1.jpg' alt='')
+                    .publicity__text
+                        span.publicity__name Счастливые часы до&nbsp;12:00
+                        p.publicity__description Дополнительная скидка на&nbsp;все автомобили 25&nbsp;000&nbsp;₽
+                    button.button.button-blue Получить предложение
+
+                li.publicity__el.hidden-el
+                    .publicity__img
+                        img(src='/src/assets/images/img--publicity-2.jpg' alt='')
+                    .publicity__text
+                        span.publicity__name Скидка 20%
+                        p.publicity__description По&nbsp;госпрограммам семейный и&nbsp;первый автомобиль
+                    button.button.button-blue Получить предложение
+
+            .text-center
+                button(data-hide='Скрыть' data-show='Показать все').button.button-blue-border.js--toggle-hidden Показать все
+
+    include ../views/components/question
